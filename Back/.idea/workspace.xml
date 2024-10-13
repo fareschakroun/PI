@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="be8f8e60-5f0d-4a20-b41b-1d8b9eb70c0e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front/src/app/booths-for-supplier/booths-for-supplier.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/src/app/booths-for-supplier/booths-for-supplier.component.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/3.2.2/spring-data-commons-3.2.2.jar!/org/springframework/data/repository/CrudRepository.class" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Appointement/src/main/java/com/example/appointementandclassroom/controllers/AppointementManagement.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2cHSLehdkaYMgWFPfAw1fGGgPj1" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Integration Finale/DevXpertsProject/Back&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;67d45e22e9bf447ca834e80569854d17&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\fares\OneDrive\Bureau\DevEpert project\DevXpertsProject\Back\Appointement\src\main\resources\static\js" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.appointementandclassroom.repositories" />
+      <recent name="com.example.appointementandclassroom.entities" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.BoothAndSupplier">
+    <configuration name="AppointementApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="AppointementAndClassroom" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.appointementandclassroom.AppointementApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuctionApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Auction" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="tn.esprit.auction.AuctionApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthenticationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="AuthenticationService" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.authenticationservice.AuthenticationServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoothAndSupplier" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <module name="BoothAndSupplierManagement" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.exhibitor.ExhibitorApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoothApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Booth" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.Event.BoothApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoothApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Booth" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.supplier.BoothApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClaimApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Claim" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.claim.ClaimApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="configServer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.configserver.ConfigServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="configServer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.configserver.ConfigServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiscoveryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="discovery" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.discovery.DiscoveryApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiscoveryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="discovery" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.discovery.DiscoveryApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EventApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Events" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.Event.EventApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EventApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Events" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.supplier.EventApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExhibitorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="BoothAndSupplierManagement" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.exhibitor.ExhibitorApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExhibitorApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="BoothAndSupplierManagement" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.exhibitor.ExhibitorApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ForumApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Forum" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.forum.ForumApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.gateway.GatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OfferApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Offer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.offer.offer.OfferApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.ForumApplication" />
+      <item itemvalue="Spring Boot.AuthenticationServiceApplication" />
+      <item itemvalue="Spring Boot.AuctionApplication" />
+      <item itemvalue="Spring Boot.AppointementApplication" />
+      <item itemvalue="Spring Boot.BoothAndSupplier" />
+      <item itemvalue="Spring Boot.ClaimApplication" />
+      <item itemvalue="Spring Boot.EventApplication" />
+      <item itemvalue="Spring Boot.GatewayApplication" />
+      <item itemvalue="Spring Boot.OfferApplication" />
+      <item itemvalue="Spring Boot.DiscoveryApplication" />
+      <item itemvalue="Spring Boot.BoothApplication" />
+      <item itemvalue="Spring Boot.ConfigServerApplication" />
+      <item itemvalue="Spring Boot.ExhibitorApplication" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="be8f8e60-5f0d-4a20-b41b-1d8b9eb70c0e" name="Changes" comment="" />
+      <created>1707766955930</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1707766955930</updated>
+      <workItem from="1707766956963" duration="1865000" />
+      <workItem from="1707813501570" duration="22445000" />
+      <workItem from="1707985784081" duration="6382000" />
+      <workItem from="1708172711728" duration="793000" />
+      <workItem from="1708336224080" duration="3264000" />
+      <workItem from="1708344208205" duration="822000" />
+      <workItem from="1708345061956" duration="2668000" />
+      <workItem from="1708354348771" duration="3921000" />
+      <workItem from="1708364985385" duration="1679000" />
+      <workItem from="1708433341344" duration="1875000" />
+      <workItem from="1708481185995" duration="5956000" />
+      <workItem from="1708502494497" duration="5979000" />
+      <workItem from="1708547481762" duration="13413000" />
+      <workItem from="1708593766692" duration="5563000" />
+      <workItem from="1708674688016" duration="3851000" />
+      <workItem from="1708694632033" duration="2937000" />
+      <workItem from="1708757087593" duration="2569000" />
+      <workItem from="1708792537781" duration="4735000" />
+      <workItem from="1708865737496" duration="6191000" />
+      <workItem from="1708936498451" duration="3273000" />
+      <workItem from="1709047775742" duration="9174000" />
+      <workItem from="1709058868158" duration="295000" />
+      <workItem from="1709078562980" duration="243000" />
+      <workItem from="1709110790004" duration="2741000" />
+      <workItem from="1709145063939" duration="2500000" />
+      <workItem from="1709174565732" duration="738000" />
+      <workItem from="1709180803166" duration="5805000" />
+      <workItem from="1709211319001" duration="1959000" />
+      <workItem from="1709322100665" duration="11471000" />
+      <workItem from="1709377196973" duration="791000" />
+      <workItem from="1709378572938" duration="2241000" />
+      <workItem from="1709406295773" duration="410000" />
+      <workItem from="1709465654839" duration="4262000" />
+      <workItem from="1709486175089" duration="602000" />
+      <workItem from="1709642453373" duration="8760000" />
+      <workItem from="1709760596920" duration="6337000" />
+      <workItem from="1709808437342" duration="305000" />
+      <workItem from="1709818436194" duration="1725000" />
+      <workItem from="1709937519288" duration="800000" />
+      <workItem from="1710388471643" duration="2036000" />
+      <workItem from="1710414516157" duration="289000" />
+      <workItem from="1711526110538" duration="7206000" />
+      <workItem from="1711624012254" duration="10472000" />
+      <workItem from="1711957415433" duration="7627000" />
+      <workItem from="1712052939427" duration="12590000" />
+      <workItem from="1712221550336" duration="1839000" />
+      <workItem from="1712229037323" duration="2041000" />
+      <workItem from="1713183494116" duration="107000" />
+      <workItem from="1713183639406" duration="698000" />
+      <workItem from="1713196237963" duration="8389000" />
+      <workItem from="1713309595727" duration="11619000" />
+      <workItem from="1713422466322" duration="16997000" />
+      <workItem from="1713714387812" duration="4843000" />
+      <workItem from="1713774238361" duration="1539000" />
+      <workItem from="1713884025139" duration="3171000" />
+      <workItem from="1713908390616" duration="2417000" />
+      <workItem from="1714036185626" duration="1258000" />
+      <workItem from="1715213623508" duration="470000" />
+      <workItem from="1715530197355" duration="2178000" />
+      <workItem from="1715604316972" duration="1904000" />
+      <workItem from="1715724205482" duration="5264000" />
+      <workItem from="1717090933834" duration="1497000" />
+      <workItem from="1717344916398" duration="1440000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

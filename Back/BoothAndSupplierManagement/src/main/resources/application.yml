@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: BoothAndSupplier
+  config:
+    import: optional:configserver:http://localhost:8889
+
+
+

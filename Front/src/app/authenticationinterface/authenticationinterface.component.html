@@ -1,0 +1,21 @@
+<br> 
+<br>
+<form [formGroup]="authForm" (ngSubmit)="login()">
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="email" placeholder="Enter email">
+        <div class="invalid-feedback">
+            <div *ngIf="authForm.get('email').errors['required']">Email is required.</div>
+            <div *ngIf="authForm.get('email').errors['email']">Invalid email format.</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" formControlName="password" placeholder="Password">
+        <div *ngIf="authForm.get('password').invalid && (authForm.get('password').dirty || authForm.get('password').touched)"
+            class="invalid-feedback">
+            <div *ngIf="authForm.get('password').errors['required']">Password is required.</div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>

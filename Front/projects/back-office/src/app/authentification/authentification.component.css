@@ -1,0 +1,9 @@
+.form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .invalid-feedback {
+    color: red;
+    font-size: 0.9em;
+  }
+  

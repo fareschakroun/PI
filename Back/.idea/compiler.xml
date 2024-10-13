@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="BoothAndSupplierManagement" />
+        <module name="Events" />
+        <module name="Offer" />
+        <module name="discovery" />
+        <module name="Exhibitor" />
+        <module name="configServer" />
+        <module name="Auction" />
+        <module name="AppointementAndClassroom" />
+        <module name="AuthenticationService" />
+        <module name="gateway" />
+        <module name="Claim" />
+        <module name="Forum" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Booth" target="17" />
+      <module name="Exhibitor" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="AppointementAndClassroom" options="-parameters" />
+      <module name="Auction" options="-parameters" />
+      <module name="AuthenticationService" options="-parameters" />
+      <module name="Booth" options="-parameters" />
+      <module name="BoothAndSupplierManagement" options="-parameters" />
+      <module name="Claim" options="-parameters" />
+      <module name="Events" options="-parameters" />
+      <module name="Exhibitor" options="-parameters" />
+      <module name="Forum" options="-parameters" />
+      <module name="Offer" options="-parameters" />
+      <module name="configServer" options="-parameters" />
+      <module name="discovery" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="gateway (1)" options="-parameters" />
+    </option>
+  </component>
+</project>

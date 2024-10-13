@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 mx-auto">
+            <form class="search-form">
+                <div class="input-group mb-3">
+                    <!-- <input type="text" class="form-control" placeholder="Search here..." aria-label="Search"
+                        aria-describedby="search-button"> -->
+                        <!-- <a class="dropdown-item" (click)="filterOrderChange('Asc')"  *ngIf="FilterOrder=='Desc'">Ascending order</a>
+                        <a class="dropdown-item" (click)="filterOrderChange('Desc')"  *ngIf="FilterOrder=='Desc'">Descending order</a>
+                        
+                        <a class="dropdown-item" (click)="filterStatusChange('pending')"  *ngIf="FilterStatus=='pending'">Treated Status</a>
+                        <a class="dropdown-item" (click)="filterStatusChange('treated')"  *ngIf="FilterStatus=='treated'">Treated Status</a> -->
+
+                    <!-- <button class="btn btn-outline-secondary" type="button" id="search-button"> -->
+                        <!-- <i class="mdi mdi-magnify f-22"></i>
+                    </button> -->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<section class="wallet section bg-light">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-8">
+                <div class="inner-heading text-center">
+                    <div class="mt-4">
+                        <h1 class="fw-bold">Claims List</h1>
+                        <p class="text-muted">Your Claims Are Under Review Expect Timely Updates.</p>
+                    </div>
+                </div>
+                <div class="heading-bottom-icon d-flex justify-content-center text-center">
+                    <i class="mdi mdi-image-filter-vintage"></i>
+                    <i class="mdi mdi-image-filter-vintage mx-2"></i>
+                    <i class="mdi mdi-image-filter-vintage"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-lg-4" *ngFor="let claim of claims">
+                <div class="claim-card">
+                    <h3 class="claim-title">{{ claim.subject }}</h3>
+                    <p class="claim-date">{{ claim.date }}</p>
+                    <p class="claim-description">{{ claim.description }}</p>
+                    <div class="claim-actions">
+                        
+                            <i class="material-icons"(click)="deleteClaim(claim.idClaim)">delete</i> 
+                  
+                            <i class="material-icons"(click)="editClaim(claim)">edit</i> 
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <button class="btn btn-white d-inline text-dark shadow">Read More</button>
+        </div>
+    </div>
+</section>

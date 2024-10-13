@@ -1,0 +1,31 @@
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    eureka-service-url:
+      defaultZone: http://localhost:8761/eureka
+server:
+  port: 8763
+
+
+spring:
+  application:
+    name: BoothAndSupplier
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/BoothAndSupplier?createDatabaseIfNotExist=true
+    hikari:
+      username: root
+      password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+
+
+application:
+  config:
+    user-url: http://localhost:8362/auth
+
+

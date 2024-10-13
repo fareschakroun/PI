@@ -1,0 +1,101 @@
+
+{ 
+    "intents": [
+        {
+            "tag": "hello",
+            "trigger": [
+                "Hi",
+                "Is anyone here?",
+                "hello"
+            ],
+            "responses": [
+                "Good morning , How can I assist you today?",
+                "Hello my friend, how can I help you ?"
+            ]
+        },
+        {
+            "tag": "name",
+            "trigger": [
+                "what's your name",
+                "what is your name"
+                
+            ],
+            
+            "responses": [
+                "My name is Abigail. How can I assist you today?",
+                "Im Abigail. How can I assist you today? "
+            ]
+        },
+
+     
+
+
+        {
+            "tag": "calendar",
+            "trigger": [
+                "calendar list",
+                "Appointment List",
+                "Appointment",
+                "how to use calendar?",
+                "can i have calendar path ",
+                "I need appointment  path"
+
+            ],
+            "responses": [
+              
+                "Sure, let me guide you to the calendar page 'http://localhost:4203/calender'"
+    ]                
+            
+        },
+        {
+            "tag": "add-calendar",
+            "trigger": [
+                "add calender",
+                " add Appointment",
+                "I need to add new Appointment?"
+               
+
+            ],
+            "responses": [
+                "Sure, here is the link to the calendar :  http://localhost:4203/calender "
+                
+            ]
+        },
+        {
+            "tag": "Classroom",
+            "trigger": [
+                "use classroom",
+                "how to use classroom ?",
+                "usage of classroom",
+                "how to use my classroom?"
+            ],
+            "responses": [
+                "le lien du classroom est :  http://localhost:4203/classrooms ",
+                "Sure, here is the link of the classroom : http://localhost:4203/classrooms "
+            ]
+        },
+        {
+            "tag": "no response",
+            "trigger": [
+                ""
+            ],
+            "responses": [
+                "sorry, I can't understand you",
+                "Please be more specific because my nlp is limited"
+            ]
+        },
+        {
+            "tag": "bye",
+            "trigger": [
+                "Bye",
+                "Nice chatting with you",
+                "Googbye"
+            ],
+            "responses": [
+                "Bye",
+                "Nice chatting with you",
+                "Googbye"
+            ]
+        }
+    ]
+}

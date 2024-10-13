@@ -1,0 +1,29 @@
+server:
+  port: 8095
+spring:
+  application:
+    name: Appointement
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/Appointement?createDatabaseIfNotExist=true
+    hikari:
+      username: root
+      password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+  config:
+    import: optional:configserver:http://localhost:8888
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: houssemjallouli99@gmail.com
+    password: uujtoekvvvctgxsq
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true

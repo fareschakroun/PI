@@ -1,0 +1,29 @@
+.section {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+}
+
+/* Style pour les cartes */
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 24px;
+    color: #333;
+}
+
+.card-description {
+    color: #666;
+}

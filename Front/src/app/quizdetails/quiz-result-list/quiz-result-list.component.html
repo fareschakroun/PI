@@ -1,0 +1,6 @@
+<div>
+    Current Quiz : {{quiz.title}}
+    <div *ngFor="let result of listResult">
+        <div (click)="outputResult(result)"> User : {{result.userId}} </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<!-- notification.component.html -->
+<li class="nav-item dropdown">
+    <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown" (click)="openNotificationBell()">
+      <i class="bi bi-bell"></i>
+      <span class="badge bg-primary2 badge-number">0</span>
+    </a>
+  
+    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+      <li class="dropdown-header">
+        You have {{ notificationcount }} new notifications
+        <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+      </li>
+      <div *ngFor="let notification of notifications">
+      <li *ngIf="notification.supplier && notification.status=== 'Pending'" class="notification-item">
+        
+        <hr class="dropdown-divider">
+        <i [ngClass]="getNotificationIcon(notification.status)"></i>
+        <div *ngIf="getType(notification.type) === 'Product'">
+          <h4>{{ notification.supplier.nom }} wanted to take care of {{notification.productname}}</h4>
+          <p>{{ notification.supplier.numeroTelephone }}</p>
+       <!--    <p>{{ notification.timestamp }}</p> -->
+        </div>
+        <div *ngIf="getType(notification.type) === 'Service'">
+            <h4>{{ notification.supplier.nom }} wanted to take care of {{notification.servicename}}</h4>
+            <p>{{ notification.supplier.numeroTelephone }}</p>
+         <!--    <p>{{ notification.timestamp }}</p> -->
+          </div>
+          <div *ngIf="getType(notification.type) === 'Product and Service'">
+            <h4>{{ notification.supplier.nom }} wanted to take care of <br>{{notification.productname}} and {{notification.servicename}}</h4>
+            <p>{{ notification.supplier.numeroTelephone }}</p>
+         <!--    <p>{{ notification.timestamp }}</p> -->
+          </div>
+        
+      </li>
+    </div>
+    
+      
+      <li *ngIf="notifications.length > 0" class="dropdown-footer">
+        <a href="#">Show all notifications</a>
+      </li>
+    </ul>
+  </li>

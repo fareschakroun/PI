@@ -1,0 +1,5 @@
+.countdown-digit {
+    font-size: 2em;  /* Adjust the size as needed */
+    font-weight: bold;  /* Optionally add bold styling */
+    color: #333;  /* Optionally set a color */
+  }

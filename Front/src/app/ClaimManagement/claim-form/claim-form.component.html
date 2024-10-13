@@ -1,0 +1,110 @@
+<body data-bs-spy="scroll" data-bs-target="#navbar-navlist" data-bs-offset="71">
+
+    <!-- light-dark mode button -->
+    <a href="javascript:void(0);" id="mode" class="mode-btn text-white rounded-end">
+        <i class="uil uil-brightness mode-dark mx-auto"></i>
+        <i class="uil uil-moon bx-spin mode-light"></i>
+    </a>
+
+    <!-- start section -->
+    <section class="home section bg-light overflow-hidden">
+        <!-- start container -->
+        <div class="container">
+            <div class="row justify-content-xxl-end justify-content-center">
+                <div class="col-lg-8">
+                    <nav aria-label="breadcrumb">
+                       
+                    </nav>
+                </div>
+            </div>
+
+            
+            <div class="row justify-content-xxl-end justify-content-center">
+                <div class="container">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-lg-8">
+                            <div class="inner-heading text-center">
+                                <div class="mt-5">
+                                    <h1 class="fw-bold">Claim</h1>
+                                    <p class="text-muted">Submit Your Claims Hassle-Free And Get Swift Resolutions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+
+            <form class="mt-2">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="info-box">
+                                <h4 class="fw-bold">Account Info <i class="mdi mdi-information-outline f-30 align-middle"></i></h4>
+                                <div class="mt-4">
+                                   
+                
+                                    <div class="mt-4">
+                                        <label for="validationDefault001" class="form-label fw-semibold"> Subject :</label>
+                                        <input type="text" class="form-control" id="validationDefault001" placeholder="" value="" [(ngModel)]="claim.subject" name="subject" required>
+                                    </div>
+                
+                                    <div class="mt-4">
+                                        <label for="validationDefault03" class="form-label fw-semibold"> Description :</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="claim.description" name="description" required></textarea>
+                                    </div>
+
+                                    <div class="mt-4">
+                                        <label for="claimType" class="form-label fw-semibold"> Claim Type :</label>
+                                        <select class="form-select" id="claimType" [(ngModel)]="claim.title" name="claimType" (change)="onClaimTypeChange()">
+                                            <option value="SYSTEM">System</option>
+                                            <option value="SERVICE">Service</option>
+                                            <option value="OTHER">Other</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mt-4" *ngIf="claim.title === 'SYSTEM'">
+                                        <label for="systemProblem" class="form-label fw-semibold"> System Problem :</label>
+                                        <select class="form-select" id="systemProblem" [(ngModel)]="claim.systemProblem" name="systemProblem">
+                                            <option value="SERVER">Server</option>
+                                            <option value="OPERATIONAL_MALFUNCTION">Operational Malfunction</option>
+                                            <option value="UNCORRECT_TIMING">Uncorrect Timing</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mt-4" *ngIf="claim.title === 'SERVICE'">
+                                        <label for="serviceProblem" class="form-label fw-semibold"> Service Problem :</label>
+                                        <select class="form-select" id="serviceProblem" [(ngModel)]="claim.serviceProblem" name="serviceProblem">
+                                            <option value="STAFF_SHORTAGE">Staff Shortage</option>
+                                            <option value="DESORGANISATION">Disorganisation</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <div class="submit-button mt-4">
+                                <button class="btn btn-primary" type="submit" (click)="addClaim()">Submit</button>
+                            </div>
+                            <div class="request-image position-absolute top-0 end-0 p-0">
+                                <img src="images/inner-image/contact-bg.png" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Button to show claims -->
+            <div class="container mt-4">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <button class="btn btn-secondary" (click)="navigateToClaimList()">View My Claims</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- end container -->
+    </section>
+
+    <!-- Bootstrap JS -->
+   
+</body>

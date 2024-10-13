@@ -1,0 +1,41 @@
+<section class="newsletter section bg-light">
+  <!-- start container -->
+  <div class="container">
+    <div class="newsletter-item mt-5">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-lg-6 inner-heading">
+          <h1 class="display-5 fw-bold">
+            Press the wheel to land on a random prize!
+          </h1>
+          <p class="f-16 text-muted mt-4"></p>
+
+          <button class="btn btn-primary shadow mt-4"  (click)="spin(0)">
+            start
+          </button>
+        </div>
+        <div class="col-lg-6">
+          <div class="newsletter-image mt-4 mt-lg-0" style="margin-left: 25%">
+            <ngx-wheel
+              #wheel
+              [width]="400"
+              [height]="400"
+              [spinDuration]="8"
+              [items]="items"
+              [innerRadius]="60"
+              [spinAmount]="10"
+              [textOrientation]="textOrientation"
+              [textAlignment]="textAlignment"
+              pointerStrokeColor="black"
+              pointerFillColor="gold"
+              [idToLandOn]="idToLandOn"
+              (onSpinStart)="before()"
+              (onSpinComplete)="after()"
+            ></ngx-wheel>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end container -->
+</section>
+

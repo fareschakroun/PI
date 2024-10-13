@@ -1,0 +1,218 @@
+<div class="row">
+  <div class="col-xl-6 col-lg-6">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Interaction post</h4>
+      </div>
+      <div class="card-body">
+        <div [chart]="linechart"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-6 col-lg-6">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Interaction day</h4>
+      </div>
+      <div class="card-body">
+        <div [chart]="barchart"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-6 col-lg-6">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Advanced day</h4>
+      </div>
+      <div class="card-body">
+        <div [chart]="columnchart"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header border-0 pb-0">
+    <h4 class="card-title">Events</h4>
+  </div>
+  <div class="card-body pb-0">
+    <div class="widget-media">
+      <fieldset>
+        <button
+          type="submit"
+          (click)="resetFilter()"
+          class="btn btn-primary mb-2"
+        >
+          Reset Filter
+        </button>
+        <legend>Event Name</legend>
+
+        <label class="col-sm-2 col-form-label col-form-label-sm"
+          >Filter</label
+        >
+
+        <input
+          class="form-control form-control-sm"
+          type="text"
+          [(ngModel)]="myFilter.name"
+        />
+
+        <button
+          class="btn btn-primary dropdown-toggle show"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="true"
+        >
+          Rate
+        </button>
+        <div
+          class="dropdown-menu show"
+          data-popper-placement="top-start"
+          style="
+            margin: 0px;
+            position: absolute;
+            inset: auto auto 0px 0px;
+            transform: translate(0px, -44px);
+          "
+          data-popper-reference-hidden=""
+          data-popper-escaped=""
+        >
+          <a class="dropdown-item" (click)="filterRateChangeASC()">Ascending order</a>
+          <a class="dropdown-item" (click)="filterRateChangeDesc()">Descending order</a>
+        </div>
+        <button
+          class="btn btn-primary dropdown-toggle show"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="true"
+        >
+          Views
+        </button>
+        <div
+          class="dropdown-menu show"
+          data-popper-placement="top-start"
+          style="
+            margin: 0px;
+            position: absolute;
+            inset: auto auto 0px 0px;
+            transform: translate(0px, -44px);
+          "
+          data-popper-reference-hidden=""
+          data-popper-escaped=""
+        >
+          <a class="dropdown-item" (click)="filterViewsChangeASC()">Ascending order</a>
+          <a class="dropdown-item" (click)="filterViewsChangeDesc()">Descending order</a>
+          <label>higher than</label>
+          <input type="number" [(ngModel)]="Viewshigher" />
+          <label>lower than</label>
+          <input type="number" [(ngModel)]="Viewslower" />
+        </div>
+        <button
+          class="btn btn-primary dropdown-toggle show"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="true"
+        >
+          Interest
+        </button>
+        <div
+          class="dropdown-menu show"
+          data-popper-placement="top-start"
+          style="
+            margin: 0px;
+            position: absolute;
+            inset: auto auto 0px 0px;
+            transform: translate(0px, -44px);
+          "
+          data-popper-reference-hidden=""
+          data-popper-escaped=""
+        >
+          <a class="dropdown-item" (click)="filterInterestChangeASC()">Ascending order</a>
+          <a class="dropdown-item" (click)="filterInterestChangeDesc()">Descending order</a>
+          <label>higher than</label>
+          <input type="number" [(ngModel)]="Interesthigher" />
+          <label>lower than</label>
+          <input type="number" [(ngModel)]="Interestlower" />
+        </div>
+      </fieldset>
+      <br /><br /><br />
+      <br />
+      <ul class="timeline">
+        <li *ngFor="let event of eventListFiltered">
+          <div
+            *ngIf="
+              (event.name.includes(myFilter.name) || myFilter.name == '') &&
+              (event.viewsCounter > Viewshigher || Viewshigher == 0) &&
+              (event.viewsCounter < Viewslower || Viewslower == 0) &&
+              (event.interestedCounter < Interestlower || Interestlower == 0) &&
+              (event.interestedCounter > Interesthigher || Interesthigher == 0)
+            "
+          >
+            <div class="form-check custom-checkbox">
+              <input
+                (change)="handleCheckboxChange(event)"
+                type="checkbox"
+                class="form-check-input"
+                id="customCheckBox1"
+                [checked]="totalsDataCounter[0].indexOf(event.name) != -1"
+                required
+              />
+
+              <div class="timeline-panel" style="margin-left: 5%">
+                <div class="media me-2">
+                  <img alt="image" width="100" src="{{ event.imageUrl }}" />
+                </div>
+                <div class="media-body">
+                  <h5 class="mb-1">{{ event.name }}</h5>
+                  <small class="d-block">{{
+                    event.date | date : "MMMM d,y"
+                  }}</small>
+                </div>
+                <div class="dropdown">
+                  <button
+                    type="button"
+                    class="btn btn-primary light sharp"
+                    data-bs-toggle="dropdown"
+                  >
+                    <svg
+                      width="18px"
+                      height="18px"
+                      viewBox="0 0 24 24"
+                      version="1.1"
+                    >
+                      <g
+                        stroke="none"
+                        stroke-width="1"
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <rect x="0" y="0" width="24" height="24" />
+                        <circle fill="#000000" cx="5" cy="12" r="2" />
+                        <circle fill="#000000" cx="12" cy="12" r="2" />
+                        <circle fill="#000000" cx="19" cy="12" r="2" />
+                      </g>
+                    </svg>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-end">
+                    <a class="dropdown-item"> {{ event.type }} </a>
+                    <a class="dropdown-item">{{ event.viewsCounter }} views</a>
+                    <a class="dropdown-item">
+                      {{ event.interestedCounter }} intrested
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="chart-wrapper">
+    <canvas id="chart_widget_9"></canvas>
+  </div>
+</div>
+
+<button class="btn btn-primary mb-2 floating-button" (click)="scrollToTop()">
+  Go to Top
+</button>

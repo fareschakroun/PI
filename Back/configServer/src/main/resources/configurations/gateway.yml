@@ -1,0 +1,242 @@
+server:
+  port: 8222
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: claims
+          uri: http://localhost:8050
+          predicates:
+            - Path=/api/Claims/**
+          metadata:
+            cors:
+              allowedOrigins: "*"
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+              allowedHeaders: "*"
+              maxAge: 30
+          filters:
+            - AuthenticationFilter
+
+        - id: postsForum
+          uri: http://localhost:8040
+          predicates:
+            - Path=/api/Posts/**
+          metadata:
+            cors:
+              allowedOrigins: "*"
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+              allowedHeaders: "*"
+              maxAge: 30
+          filters:
+            - AuthenticationFilter
+
+        - id: commentForum
+          uri: http://localhost:8040
+          predicates:
+            - Path=/api/Comments/**
+          metadata:
+            cors:
+              allowedOrigins: "*"
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+              allowedHeaders: "*"
+              maxAge: 30
+          filters:
+            - AuthenticationFilter
+        - id: Appointement
+          uri: http://localhost:8095
+          predicates:
+            - Path=/api/AppointementAndClassrooms/**
+          metadata:
+            cors:
+              allowedOrigins: "*"
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+              allowedHeaders: "*"
+              maxAge: 30
+          filters:
+            - AuthenticationFilter
+        - id: events
+          uri: http://localhost:8091
+          predicates:
+            - Path=/api/Event/**
+          metadata:
+            cors:
+              allowedOrigins: "*"
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+              allowedHeaders: "*"
+              maxAge: 30
+          filters:
+            - AuthenticationFilter
+
+        - id: booths
+          uri: http://localhost:8763
+          predicates:
+            - Path=/api/BoothAndSupplier/**
+          filters:
+            - AuthenticationFilter
+
+        - id: suppliers
+          uri: http://localhost:8763
+          predicates:
+            - Path=/api/supplyrequest/**
+          metadata:
+            cors:
+              allowedOrigins: "*"
+              allowedMethods:
+                - GET
+                - POST
+                - DELETE
+                - PUT
+              allowedHeaders: "*"
+              maxAge: 30
+          filters:
+            - AuthenticationFilter
+
+        - id: supplyoffer
+          uri: http://localhost:8763
+          predicates:
+            - Path=/api/SupplyOffer/**
+          metadata:
+            cors:
+              allowedOrigins: "*"
+              allowedMethods:
+                - GET
+                - POST
+                - DELETE
+              allowedHeaders: "*"
+              maxAge: 30
+          filters:
+            - AuthenticationFilter
+
+        - id: authservice
+          uri: http://localhost:8080
+          predicates:
+            - Path=/auth/**
+          metadata:
+            cors:
+              allowedOrigins: "*"
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+              allowedHeaders: "*"
+              maxAge: 30
+          filters:
+            - AuthenticationFilter
+
+        - id: exhibitors
+          uri: http://localhost:8070
+          predicates:
+            - Path=/exhibitor/api/Exhibitors/**
+
+        - id: offers
+          uri: http://localhost:8899
+          predicates:
+            - Path=/api/Offer/**
+          metadata:
+            cors:
+              allowedOrigins: "*"
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+              allowedHeaders: "*"
+              maxAge: 30
+          filters:
+            - AuthenticationFilter
+
+        - id: applications
+          uri: http://localhost:8899
+          predicates:
+            - Path=/api/Application/**
+          metadata:
+            cors:
+              allowedOrigins: "*"
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+              allowedHeaders: "*"
+              maxAge: 30
+          filters:
+            - AuthenticationFilter
+
+        - id: authserviceUpload
+          uri: http://localhost:8080
+          predicates:
+            - Path=/authImage/**
+          metadata:
+            cors:
+              allowedOrigins: "*"
+              allowedMethods:
+                - GET
+                - POST
+              allowedHeaders: "*"
+              maxAge: 30
+
+
+        - id: rooms
+          uri: http://localhost:8083
+          predicates:
+            - Path=/api/rooms/**
+          metadata:
+            cors:
+              allowedOrigins: '*'
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+              allowedHeaders: '*'
+              maxAge: 2000
+          filters:
+            - AuthenticationFilter
+
+        - id: packs
+          uri: http://localhost:8083
+          predicates:
+            - Path=/api/packs/**
+          metadata:
+            cors:
+              allowedOrigins: '*'
+              allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+              allowedHeaders: '*'
+              maxAge: 2000
+          filters:
+            - AuthenticationFilter
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

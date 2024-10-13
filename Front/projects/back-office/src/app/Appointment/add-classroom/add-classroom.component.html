@@ -1,0 +1,178 @@
+
+<div class="col-md-8 offset-md-2 text-center">
+    <h1>Reserve a classroom for the Appointments</h1>
+  </div>
+  
+
+<div class="col-md-8 offset-md-3">
+    <section id="contact" class="contact">
+        <div class="container">
+
+                    <form [formGroup]="classroomForm" >
+                        <div class="row">
+                                
+
+                            <div class="row">
+                                <h6>Block</h6>
+                                <div class="col-md-6 form-group">
+
+                                    <input type="text" class="form-control" name="block" id="block" 
+                                        
+                                        formControlName="block" >
+                                </div>
+                                <h6>level</h6>
+                                <div class="col-md-6 form-group mt-3 mt-md-0">
+
+                                    <input type="text" class="form-control" name="level" id="level"
+                                        >
+                                </div>
+                                <div>
+                                <h6>ClassRoom Number</h6>
+                                <div class="col-md-6 form-group mt-3">
+                                    
+                                    <input type="number" class="form-control" name="classRoomNumber"
+                                        id="classRoomNumber" placeholder="Classroom Number"
+                                        formControlName="classRoomNumber" min="1" max="4" required>
+                                </div>
+                            </div>
+                            </div>
+
+
+
+
+
+
+                            <!-- -----------------------------------------------------
+ -->
+
+
+                            
+                            <h3>Start reservation</h3>
+                            <h3>---------------------------</h3>
+
+                            <div class="date-time-list">
+                                <div>
+                                    <h6>Year</h6>
+                                <select class="form-control" formControlName="year">
+                                    <option value="" disabled selected>Year</option>
+                                    <!-- Génération des options pour les années de 2000 à 2050 -->
+                                    <ng-container *ngFor="let year of getYears()">
+                                        <option [value]="year">{{ year }}</option>
+                                    </ng-container>
+                                </select>
+                            </div>
+                                <div>
+                                    <h6>Month</h6>
+                                <select class="form-control" formControlName="month">
+                                    <option value="" disabled selected>Month</option>
+                                    <!-- Génération des options pour les mois de 1 à 12 -->
+                                    <ng-container *ngFor="let month of getMonths()">
+                                        <option [value]="month">{{ month }}</option>
+                                    </ng-container>
+                                </select>
+                            </div>
+                            <div>
+                                <h6>Days</h6>
+                                <select class="form-control" formControlName="days">
+                                    <option value="" disabled selected>Days</option>
+                                    <!-- Génération des options pour les jours de 1 à 31 -->
+                                    <ng-container *ngFor="let day of getDays()">
+                                        <option [value]="day">{{ day }}</option>
+                                    </ng-container>
+                                </select>
+                            </div>
+                                <div>
+                                    <h6>Hours</h6>
+                                    <select class="form-control" formControlName="startHours">
+                                        <option value="" disabled selected>Hours</option>
+                                       
+                                        <ng-container *ngFor="let hour of getHours()">
+                                            <option [value]="hour">{{ hour }}</option>
+                                        </ng-container>
+                                    </select>
+                                </div>
+                                <div >
+                                <h6>Minutes</h6>
+                                <select class="form-control" formControlName="startMinutes">
+                                    <option value="" disabled selected>Minutes</option>
+                                 
+                                    <ng-container *ngFor="let minute of getMinutes()">
+                                        <option [value]="minute">{{ minute }}</option>
+                                    </ng-container>
+                                </select>
+                            </div>
+                            <div *ngIf="errorMessage" class="error-message">
+                                {{ errorMessage }}
+                              </div>
+                              
+                            </div>
+
+
+                        </div>
+                        <!-- ------------------------------------------------- -->
+                        <h3>Start reservation</h3>
+                        <h3>---------------------------</h3>
+                        
+                        <div class="date-time-list">
+                            <div >
+                                <h6>Hours</h6>
+                                <select class="form-control" formControlName="endHours">
+                                    <option value="" disabled selected>Hours</option>
+                                    <!-- Génération des options pour les heures de 00 à 23 -->
+                                    <ng-container *ngFor="let hour of getHours()">
+                                        <option [value]="hour">{{ hour }}</option>
+                                    </ng-container>
+                                </select>
+                            </div>  
+                            <div> 
+                                <h6>Minutes</h6>
+                                <select class="form-control" formControlName="endMinutes">
+                                    <option value="" disabled selected>Minutes</option>
+                                    <!-- Génération des options pour les minutes de 00 à 59 -->
+                                    <ng-container *ngFor="let minute of getMinutes()">
+                                        <option [value]="minute">{{ minute }}</option>
+                                    </ng-container>
+                                </select>
+                            </div> 
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                        <!-- -----------------------------------------------------
+ -->
+
+
+
+
+                        <div class="row"></div>
+                        <!--   </div> -->
+                        <div class="row"></div>
+                        <div class="row"></div>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <!--  <div class="text-center"> -->
+                        <button  type="submit" aria-label="add" value="add" class="btn btn-primary" (click)="add()">
+                            <div   *ngIf="localclassroom.id ==0">
+                                Add new classroom
+                            </div>
+                            <div *ngIf="localclassroom.id!=0"> Update
+                            </div>
+                             </button>
+                            
+                        <!--                         <input type="submit" aria-label="add" value="add"  class="btn btn-primary"  height="500" width="100" (click)="add()"> -->
+                        <!-- </div> -->
+
+                    </form>
+                </div>
+
+    </section>
+</div>
+<!-- ------------------------------------------------------------------------------------------------- -->

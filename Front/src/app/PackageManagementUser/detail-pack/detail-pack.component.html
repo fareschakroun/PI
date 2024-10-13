@@ -1,0 +1,43 @@
+
+
+
+
+
+<section class=" blog-slider slider4 section bg-light" id="collections" style="margin-left: 5%;">
+    <!-- start container -->
+    <div class="container position-relative">
+<div class="row">
+    <div class="col-lg-12">
+        <div class="client-slider position-relative mt-5">
+            <div class="item" *ngFor="let p of packs">
+                <div class="card">
+                    
+                    <div class="mt-3">
+                        <h5 class="fw-bold"><i
+                            class="mdi mdi-crown f-18 text-primary me-2 align-middle"></i>Colorful Abstract Painting</h5>
+
+                        <div class="d-flex align-items-center justify-content-start mt-3">
+                            
+                            <div class="image-side-content">
+                                <h6 class="mb-0 ms-2 text-muted">{{p.description}}</h6>
+                            </div>
+                            <div class="ms-auto">
+                                <p class="text-success mb-0 fw-semibold">{{p.price | currency:"DT"}}</p>
+                            </div>
+                        </div>
+                        <hr class="my-3">
+
+                        <div class="blog-slider-footer">
+                            <button style="height: 150%;padding: 10px 20px"  class="btn btn-primary">view on Simulateur</button>
+
+                        </div>
+                    </div> 
+                </div>
+            </div>
+          
+            <!-- slider item -->
+        </div>
+        <!-- End slider -->
+    </div>
+</div>
+</div></section>

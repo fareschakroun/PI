@@ -1,0 +1,220 @@
+<div class="container-fluid">
+    <div class="mb-sm-4 d-flex flex-wrap align-items-center text-head">
+        <h2 class="mb-3 me-auto">Service Requests List</h2>
+        <div>
+            <ol class="breadcrumb">
+               
+            </ol>
+        </div>
+    </div>
+    <div class="mb-4 d-flex justify-content-between align-items-center flex-wrap">
+        <div class="customer-search sm-mb-0 mb-3">
+            <div class="input-group search-area">
+                <input type="text" class="form-control" placeholder="Search here......" [(ngModel)]="myFilter.name">
+                <span class="input-group-text"><a href="javascript:void(0)"><i
+                            class="flaticon-381-search-2"></i></a></span>
+            </div>
+        </div>
+      
+    </div>
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="table-responsive">
+                <table class="table display mb-4 dataTablesCard order-table shadow-hover  card-table text-black"
+                    id="example5">
+                    <thead>
+                        <tr>
+
+                            <th>Product Image</th>
+
+                            <th>description</th>
+                            <th>quantity</th>
+                            <th>price</th>
+
+                           
+                            <th>service name</th>
+                            <th>Status</th>
+                            <th>Supplier Name</th>
+
+                            <th>Action</th>
+
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let r of SupplyRequestList">
+                            <ng-container *ngIf="
+              
+              
+              (r.requirement.includes(myFilter.name) || myFilter.name == '') 
+            
+              
+            ">
+                                <ng-container *ngIf="r.supplier && r.type==='isService'" >
+                                    <td><img [src]="r.image.imageUrl" width="100px" height="100px"></td>
+
+                                    <td><a>{{r.requirement}}</a></td>
+                                    <td>{{r.quantity}}</td>
+                                    <td>{{r.price}}</td>
+
+                                   
+                                    <td>{{r.servicename}}</td>
+
+                                    <!--    <td><span class="btn bgl-danger text-danger btn-rounded btn-sm">Pending</span></td> -->
+                                    <td><span class="btn " [ngClass]="{
+                            'bgl-success text-success btn-sm': r.status === 'Approved',
+                            'bg-warning': r.status === 'NotApproved',
+                            'bgl-danger text-danger btn-sm': r.status === 'Pending'
+                          }">{{r.status}}</span></td>
+                          <td><a routerLink="/detail">{{r.supplier.nom}}</a></td>
+                                    <td>
+                                        <div class="dropdown ml-auto">
+                                            <div class="btn-link" data-bs-toggle="dropdown">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M11.0005 12C11.0005 12.5523 11.4482 13 12.0005 13C12.5528 13 13.0005 12.5523 13.0005 12C13.0005 11.4477 12.5528 11 12.0005 11C11.4482 11 11.0005 11.4477 11.0005 12Z"
+                                                        stroke="#3E4954" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round"></path>
+                                                    <path
+                                                        d="M18.0005 12C18.0005 12.5523 18.4482 13 19.0005 13C19.5528 13 20.0005 12.5523 20.0005 12C20.0005 11.4477 19.5528 11 19.0005 11C18.4482 11 18.0005 11.4477 18.0005 12Z"
+                                                        stroke="#3E4954" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round"></path>
+                                                    <path
+                                                        d="M4.00049 12C4.00049 12.5523 4.4482 13 5.00049 13C5.55277 13 6.00049 12.5523 6.00049 12C6.00049 11.4477 5.55277 11 5.00049 11C4.4482 11 4.00049 11.4477 4.00049 12Z"
+                                                        stroke="#3E4954" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item text-black" (click)="setStatusAccepted(r)"><i
+                                                        class="far fa-check-circle me-1 text-success" ></i>Accepteeeeeee
+                                                    order</a>
+                                                <a class="dropdown-item text-black" (click)="setStatusRefused(r)"><i
+                                                        class="far fa-times-circle me-1 text-danger" ></i>Reject
+                                                    order</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </ng-container>
+                            </ng-container>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="container-fluid">
+    <div class="mb-sm-4 d-flex flex-wrap align-items-center text-head">
+        <h2 class="mb-3 me-auto">Products Requests</h2>
+        <div>
+            <ol class="breadcrumb">
+               
+            </ol>
+        </div>
+    </div>
+    <div class="mb-4 d-flex justify-content-between align-items-center flex-wrap">
+        <div class="customer-search sm-mb-0 mb-3">
+            <div class="input-group search-area">
+                <input type="text" class="form-control" placeholder="Search here......" [(ngModel)]="myFilter.name">
+                <span class="input-group-text"><a href="javascript:void(0)"><i
+                            class="flaticon-381-search-2"></i></a></span>
+            </div>
+        </div>
+      
+    </div>
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="table-responsive">
+                <table class="table display mb-4 dataTablesCard order-table shadow-hover  card-table text-black"
+                    id="example5">
+                    <thead>
+                        <tr>
+
+                            <th>Product Image</th>
+
+                            <th>description</th>
+                            <th>quantity</th>
+                            <th>price</th>
+
+                            <th>product name</th>
+                            
+                            <th>Status</th>
+                            <th>Supplier Name</th>
+
+                            <th>Action</th>
+
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let r of SupplyRequestList">
+                            <ng-container *ngIf="
+              
+              
+              (r.requirement.includes(myFilter.name) || myFilter.name == '') 
+            
+              
+            ">
+                                <ng-container *ngIf="r.supplier && r.type ==='isProduct'">
+                                    <td><img [src]="r.image.imageUrl" width="100px" height="100px"></td>
+
+                                    <td><a>{{r.requirement}}</a></td>
+                                    <td>{{r.quantity}}</td>
+                                    <td>{{r.price}}</td>
+
+                                    <td>{{r.productname}}</td>
+                                  
+
+                                    <!--    <td><span class="btn bgl-danger text-danger btn-rounded btn-sm">Pending</span></td> -->
+                                    <td><span class="btn " [ngClass]="{
+                            'bgl-success text-success btn-sm': r.status === 'Approved',
+                            'bg-warning': r.status === 'NotApproved',
+                            'bgl-danger text-danger btn-sm': r.status === 'Pending'
+                          }">{{r.status}}</span></td>
+                          <td><a routerLink="/detail">{{r.supplier.nom}}</a></td>
+                                    <td>
+                                        <div class="dropdown ml-auto">
+                                            <div class="btn-link" data-bs-toggle="dropdown">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M11.0005 12C11.0005 12.5523 11.4482 13 12.0005 13C12.5528 13 13.0005 12.5523 13.0005 12C13.0005 11.4477 12.5528 11 12.0005 11C11.4482 11 11.0005 11.4477 11.0005 12Z"
+                                                        stroke="#3E4954" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round"></path>
+                                                    <path
+                                                        d="M18.0005 12C18.0005 12.5523 18.4482 13 19.0005 13C19.5528 13 20.0005 12.5523 20.0005 12C20.0005 11.4477 19.5528 11 19.0005 11C18.4482 11 18.0005 11.4477 18.0005 12Z"
+                                                        stroke="#3E4954" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round"></path>
+                                                    <path
+                                                        d="M4.00049 12C4.00049 12.5523 4.4482 13 5.00049 13C5.55277 13 6.00049 12.5523 6.00049 12C6.00049 11.4477 5.55277 11 5.00049 11C4.4482 11 4.00049 11.4477 4.00049 12Z"
+                                                        stroke="#3E4954" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round"></path>
+                                                </svg>
+                                            </div>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item text-black" (click)="setStatusAccepted(r)"><i
+                                                        class="far fa-check-circle me-1 text-success" ></i>Accepteeeeee
+                                                    order</a>
+                                                <a class="dropdown-item text-black" (click)="setStatusRefused(r)"><i
+                                                        class="far fa-times-circle me-1 text-danger" ></i>Reject
+                                                    order</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </ng-container>
+                            </ng-container>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,48 @@
+<div class="col-md-8 offset-md-2 text-center">
+    <h1>Add new rules for Chatbot</h1>
+</div>
+
+<div class="col-md-8 offset-md-2">
+    <section id="contact" class="contact">
+        <div class="container">
+            <form [formGroup]="rules">
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <h6>Tag</h6>
+                        <input type="text" class="form-control" formControlName="tag" id="tag">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <h6>Trigger</h6>
+                                                  <!-- Button to add a new trigger input -->
+  <!--<button type="button" class="btn btn-primary" (click)="addTriggerInput()">Add Trigger Input</button>-->
+
+  <!-- Newly added trigger inputs -->
+  <!--<div *ngFor="let control of rules.controls | keyvalue">
+    <input [formControlName]="control.key" *ngIf="control.key.startsWith('trigger')" type="text" class="form-control" id="trigger">
+</div>-->
+<div #inputContainer></div>
+
+<button (click)="addInput()"  class="btn btn-primary">Add Input</button>
+                    </div>
+                    
+                    <div class="col-md-6 form-group">
+                        <h6>Responses</h6>
+                        <input type="text" class="form-control" formControlName="responses" id="responses" placeholder="Number of responses">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <h6>Response Type</h6>
+                        <select class="form-control" formControlName="responseType" id="responseType">
+                            <option value="message">Message</option>
+                            <option value="conversation">Conversation</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary" aria-label="add" (click)="add()">
+                        Add New Rules
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,18 @@
+<div class="card border-primary shadow">
+  <div class="card-body">
+    <h5 class="card-title text-primary">Add Quiz</h5>
+    <form [formGroup]="QuestionForm">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title:</label>
+        <input type="text" id="title" name="title" formControlName="title" class="form-control">
+      </div>
+      <!--
+      <div class="mb-3">
+        <label for="category" class="form-label">Category:</label>
+        <input type="text" id="category" name="category" formControlName="category" class="form-control">
+      </div>
+      -->
+      <button type="submit" aria-label="add" value="add" class="btn btn-primary" (click)="add()">Add</button>
+    </form>
+  </div>
+</div>

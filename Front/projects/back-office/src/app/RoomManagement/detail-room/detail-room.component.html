@@ -1,0 +1,220 @@
+<div class="card">
+  <div class="card-body pt-3">
+    <!-- Bordered Tabs -->
+    <ul class="nav nav-tabs nav-tabs-bordered">
+      <li class="nav-item">
+        <button
+          class="nav-link active"
+          data-bs-toggle="tab"
+          data-bs-target="#profile-overview"
+        >
+          Details
+        </button>
+      </li>
+
+      <li class="nav-item">
+        <button
+          class="nav-link"
+          data-bs-toggle="tab"
+          data-bs-target="#profile-edit"
+        >
+          Participants
+        </button>
+      </li>
+
+      <li class="nav-item">
+        <button
+          class="nav-link"
+          data-bs-toggle="tab"
+          data-bs-target="#profile-settings"
+        >
+          Update
+        </button>
+      </li>
+
+      <li class="nav-item">
+        <button
+          class="nav-link"
+          data-bs-toggle="tab"
+          data-bs-target="#profile-change-password"
+        >
+          Packs
+        </button>
+      </li>
+    </ul>
+    <div class="tab-content pt-2">
+      <div
+        class="tab-pane fade show active profile-overview"
+        id="profile-overview"
+      >
+      <h5 class="card-title">Rules</h5>
+     
+      <div [innerHTML]="sanitizeHtml(room.description)" class="formatted-text" ></div>
+        <h5 class="card-title">Room Details</h5>
+
+        <div class="row">
+          <div class="col-lg-3 col-md-4 label">code Room</div>
+          <div class="col-lg-9 col-md-8">{{ room.codeRoom }}</div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-lg-3 col-md-4 label">price</div>
+          <div class="col-lg-9 col-md-8">
+            {{ room.price | currency : "DT" }}
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3 col-md-4 label">For packs</div>
+          <div class="col-lg-9 col-md-8">{{ room.typePack }}</div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3 col-md-4 label">Start date</div>
+          <div class="col-lg-9 col-md-8">
+            {{ room.dateDebut | date : "MMMM d, y , HH:mm" }}
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3 col-md-4 label">duration</div>
+          <div class="col-lg-9 col-md-8">{{ room.duration }}</div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3 col-md-4 label">max Participants</div>
+          <div class="col-lg-9 col-md-8">{{ room.maxParticipants }}</div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade profile-edit pt-3" id="profile-edit" >
+        <div class="card-body profile-card" *ngFor="let user of users">
+          <img
+            src="../../../assets/images/pic1.jpg"
+            alt="Profile"
+            class="rounded-circle"
+          />
+          <label for="fullName" class="col-md-4 col-lg-3 col-form-label"
+          > <strong>{{user.name}}</strong></label
+        >
+        </div>
+      </div>
+
+      <div class="tab-pane fade pt-3" id="profile-settings">
+        <form (ngSubmit)="updateRoom()" #updateRoomForm="ngForm">
+          <div class="row mb-3">
+            <label for="fullName" class="col-md-4 col-lg-3 col-form-label"
+              >Start date is <strong>{{room.dateDebut | date : "MMMM d, y, HH:mm"}}</strong></label
+            >
+            <div class="col-md-8 col-lg-9">
+              <input
+                id="dateDebut"
+                [(ngModel)]="room.dateDebut"
+                name="dateDebut"
+                type="datetime-local"
+                class="form-control"
+                value="room.dateDebut"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="fullName" class="col-md-4 col-lg-3 col-form-label"
+              >duration</label
+            >
+            <div class="col-md-8 col-lg-9">
+              <input
+                id="duration"
+                [(ngModel)]="room.duration"
+                name="duration"
+                type="number"
+                class="form-control"
+                value="Kevin Anderson"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="about" class="col-md-4 col-lg-3 col-form-label"
+              >rules</label
+            >
+            <div class="col-md-8 col-lg-9">
+              <ckeditor
+                    name="description"
+                    id="description"
+                    [(ngModel)]="room.description"
+                    [config]="editorConfig"
+                  ></ckeditor>
+            </div>
+           
+          </div>
+          <div class="row mb-3">
+            <label for="fullName" class="col-md-4 col-lg-3 col-form-label"
+              >Maximum participant number</label
+            >
+            <div class="col-md-8 col-lg-9">
+              <input
+                id="maxParticipants"
+                [(ngModel)]="room.maxParticipants"
+                name="maxParticipants"
+                type="number"
+                class="form-control"
+                value="Kevin Anderson"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="fullName" class="col-md-4 col-lg-3 col-form-label"
+              >Enter points</label
+            >
+            <div class="col-md-8 col-lg-9">
+              <input
+                id="price"
+                [(ngModel)]="room.price"
+                name="price"
+                type="number"
+                class="form-control"
+                value="Kevin Anderson"
+              />
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+
+      <div class="tab-pane fade pt-3" id="profile-change-password">
+         <div class="card-body" >
+       
+
+        <table class="table table-borderless datatable"  >
+          <thead >
+            <tr >
+             
+              <th scope="col">description</th>
+              <th scope="col">price</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let p of pack">
+            <tr>
+              
+             
+              <td>{{p.description}}</td>
+              <th scope="row"><a href="#">{{p.price}}</a></th>
+             
+              
+              <td *ngIf="p.reserved ==true"><span class="badge bg-success">reserved</span></td>
+              <td *ngIf="p.reserved ==false"><span class="badge bg-danger">Not reserved</span></td>
+            </tr>
+          
+           
+           
+          </tbody>
+        </table>
+
+      </div> 
+       
+      </div>
+    </div>
+    <!-- End Bordered Tabs -->
+  </div>
+</div>

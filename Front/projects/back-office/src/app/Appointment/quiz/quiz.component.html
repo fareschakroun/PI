@@ -1,0 +1,64 @@
+<div class="col-md-8 offset-md-2 text-center">
+    <h1>New Quiz</h1>
+</div>
+
+
+<div class="col-md-8 offset-md-3">
+    <section id="contact" class="contact">
+        <div class="container">
+
+            <form [formGroup]="quizForm">
+                <div class="row">
+
+
+                    <div class="row">
+                        <h6>Titre</h6>
+                        <div class="col-md-6 form-group">
+
+                            <input type="text" class="form-control" name="Title" id="Title" formControlName="title" >
+                        </div>
+
+                        
+                    </div>
+                    
+                    <div class="row">
+                        <h6>Number of questions</h6>
+                        <div class="col-md-6 form-group">
+
+                            <input type="number" class="form-control" name="Titre" id="numQ" formControlName="numQ">
+                        </div>
+
+                        
+                    </div>
+
+                    
+                    <div class="row">
+                        <h6>Category</h6>
+                        <div class="col-md-6 form-group">
+
+                            <input type="text" class="form-control" name="category" id="category=" formControlName="category" >
+                        </div>
+
+                        
+                    </div>
+
+
+
+
+
+
+
+                </div>
+                <button type="submit" aria-label="add" value="add" class="btn btn-primary" (click)="addQuiz()">
+                    <div *ngIf="localquiz.id ==0">
+                        Add new Quiz
+                    </div>
+
+                </button>
+
+            </form>
+        </div>
+
+    </section>
+</div>
+<!-- ------------------------------------------------------------------------------------------------- -->

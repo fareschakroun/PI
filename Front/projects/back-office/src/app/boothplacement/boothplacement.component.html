@@ -1,0 +1,184 @@
+<!-- <div
+    cdkDropList
+    [cdkDropListOrientation]="'horizontal'"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    <div
+        class="example-box"
+        *ngFor="let timePeriod of timePeriods"
+        cdkDrag>
+        {{timePeriod}}
+    </div>
+</div>
+ -->
+ 
+ <div class="confirmation-container" *ngIf="unsavedChanges">
+  <div class="confirmation-message">
+    Confirm booth position changes?
+    
+    <button class="btn btn-success btn sweet-success" (click)="confirmChanges()" >Confirm</button>
+   
+    <button class="cancel-button" (click)="cancelChanges()">Cancel</button>
+  </div>
+</div>
+
+
+<div class="box-container">
+
+  choose the booth size you want to add 
+ 
+  <div class="small-boxshow" (click)="chooseBox('small')" > small booth</div>
+
+
+  <div class="medium-boxshow" (click)="chooseBox('medium')">Medium booth</div>
+
+
+  <div class="big-boxshow" (click)="chooseBox('big')">Big booth</div>
+
+
+</div>
+
+<div>
+  <input id="file" type="file" class="add-button" (change)="onFileSelected($event)" accept="image/*" >
+  <label for="file" class="btn-1">
+    <span>Select your Esprit Floor Schema</span>
+  </label>
+</div>
+
+<div class="example-container">
+<div class="example-boundary" >
+  <img [src]="selectedImage" alt="Selected Image" >
+  <div class="small-box" *ngFor="let boothName of boothNames ;let i = index" cdkDragBoundary=".example-boundary" [cdkDragFreeDragPosition]="initialPositions[i]"
+    cdkDrag (cdkDragEnded)="dragEnd($event, i)" >
+    
+    {{ boothName }}
+    <button class="add-button" (click)="showList(boothName)" >+</button>
+    <button class="remove-button" (click)="removeBooth(boothName)" >-</button>
+    <div class="example-handle" cdkDragHandle>
+      <svg width="24px" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"></path>
+        <path d="M0 0h24v24H0z" fill="none"></path>
+      </svg>
+    </div>
+  
+    <!-- <div cdkDrag class="small-box"  cdkDragBoundary=".example-boundary"
+    [cdkDragFreeDragPosition]="{x:50, y:50}"
+    (cdkDragEnded)="dragEnd($event,i+1)">
+   
+   Item 1
+</div> -->
+  </div>
+  <div class="medium-box" *ngFor="let MediumboothName of MediumboothNames ;let i = index" cdkDragBoundary=".example-boundary" [cdkDragFreeDragPosition]="initialPositionsMediumBooths[i]"
+  cdkDrag (cdkDragEnded)=" dragEndMedium($event, i)">
+  {{ MediumboothName }}
+  <button class="add-button" (click)="showList(MediumboothName)" >+</button>
+  <button class="remove-button" (click)="removeBooth(MediumboothName)" >-</button>
+  <div class="example-handle" cdkDragHandle>
+    <svg width="24px" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"></path>
+      <path d="M0 0h24v24H0z" fill="none"></path>
+    </svg>
+  </div>
+
+  <!-- <div cdkDrag class="small-box"  cdkDragBoundary=".example-boundary"
+  [cdkDragFreeDragPosition]="{x:50, y:50}"
+  (cdkDragEnded)="dragEnd($event,i+1)">
+
+ Item 1
+</div> -->
+</div>
+<div class="big-box" *ngFor="let bigBoothName of BigboothNames ;let i = index" cdkDragBoundary=".example-boundary" [cdkDragFreeDragPosition]="initialPositionsBigBooths[i]"
+cdkDrag (cdkDragEnded)=" dragEndBig($event, i)">
+{{ bigBoothName }}
+<button class="add-button" (click)="showList(bigBoothName)" >+</button>
+<button class="remove-button" (click)="removeBooth(bigBoothName)" >-</button>
+<div class="example-handle" cdkDragHandle>
+  <svg width="24px" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"></path>
+    <path d="M0 0h24v24H0z" fill="none"></path>
+  </svg>
+</div>
+
+<!-- <div cdkDrag class="small-box"  cdkDragBoundary=".example-boundary"
+[cdkDragFreeDragPosition]="{x:50, y:50}"
+(cdkDragEnded)="dragEnd($event,i+1)">
+
+Item 1
+</div> -->
+</div>
+ 
+
+</div>
+
+</div>
+
+
+
+<div class="card recent-sales overflow-auto">
+
+ <!--  <div class="filter">
+    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+      <li class="dropdown-header text-start">
+        <h6>Filter</h6>
+      </li>
+
+      <li><a class="dropdown-item" href="#">Today</a></li>
+      <li><a class="dropdown-item" href="#">This Month</a></li>
+      <li><a class="dropdown-item" href="#">This Year</a></li>
+    </ul>
+  </div> -->
+
+  <div class="card-body" style="margin:30px">
+    <h5 class="card-title">Affected Suppliers List <span>| Today</span></h5>
+
+    <table class="table  datatable">
+      <thead>
+        <tr>
+          <th scope="col"><strong><h2>Booth Type</h2></strong></th>
+          <th scope="col"><strong><h2>Booth Name</h2></strong></th>
+          <th scope="col"><strong><h2>Affected Supplier</h2></strong></th>
+          <th scope="col"><strong><h2>Supplier Phone number</h2></strong></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let r of boothRepresentationList">
+          <td><a href="#" class="text-primary"><h4>{{r.boothType}}</h4></a></td>
+          <td><h4>{{r.boothname}}</h4></td>
+         
+          <td *ngIf="r.supplier"><h4>{{r.supplier.nom}}</h4></td> <!-- Added a safe navigation operator (?) -->
+          <td *ngIf="r.supplier"><h4>{{r.supplier.numeroTelephone}}</h4></td> <!-- Added a safe navigation operator (?) -->
+           
+          
+            <td *ngIf="!r.supplier"><h4>Supplier not affected</h4></td> <!-- Added a safe navigation operator (?) -->
+            <td *ngIf="!r.supplier"><h4>Supplier Not affected</h4></td> <!-- Added a safe navigation operator (?) -->
+            
+          
+        </tr>
+      </tbody>
+    </table>
+    
+
+  </div>
+</div>
+<!--  <button (click)="openConfirmationDialog(i)">Delete</button>  -->
+<!-- <button mat-button (click)="openDialog()">Open dialog</button> -->
+
+<!--   <app-dialogbox>
+    <ng-container header>Are You Sure?</ng-container>
+    <ng-container body>Are You Sure dialog is working</ng-container>
+    <ng-container footer>1234</ng-container>
+</app-dialogbox>
+ -->
+<!-- 
+<app-dialogbox *ngIf="ds.data">
+  <ng-container header>{{ ds.data.title }}</ng-container>
+  <ng-container body>{{ ds.data.message }}</ng-container>
+  <ng-container footer>
+      <div class="footer-buttons">
+          <button (click)="ds.dismiss()">Dismiss</button>
+          <button (click)="confirm()">Confirm</button>
+      </div>
+  </ng-container>
+</app-dialogbox>
+ -->

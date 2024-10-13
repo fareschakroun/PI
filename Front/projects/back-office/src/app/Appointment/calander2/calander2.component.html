@@ -1,0 +1,157 @@
+<section  >
+<full-calendar [options]="calendarOptions" ></full-calendar>
+<!-- <button (click)="randomfucnc()">FullDat</button>
+<button (click)="addEvent()">ZEEK</button> -->
+<button class="btn btn-primary" (click)="showForm()">Add an Appointement</button>
+<div *ngIf="showDelete">
+    <button class="btn btn-primary" (click)="deleteAppointment()">Delete Appointement</button>
+</div>
+
+<div *ngIf="showDelete">
+    <button class="btn btn-primary" (click)="QuizTest()">Quiz Test</button>
+</div>
+<!-- ------------------------------------test meeting ---------------------- -->
+
+<div *ngIf="showDelete">
+    <button class="btn btn-primary" (click)="OnlineMeeting()"> Online Meeting </button>
+</div>
+
+
+
+
+<!-- ------------------------------------------------------------- -->
+
+<div class="card" *ngIf="showForms === true">
+    <div class="card-body">
+        <!-- <h5 class="card-title" >Add New Appointment</h5> -->
+        <div class="col-md-8 offset-md-2 text-center">
+            <h1>Add New Appointment</h1>
+          </div>
+
+        <!-- Floating Labels Form -->
+        <form [formGroup]="AppoimentForm" (ngSubmit)="submit()">
+
+            <div class="col-md-12">
+                <h5 class="card-title">Event Name</h5>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="eventName" placeholder="eventName"
+                        formControlName="eventName">
+                    <label for="eventName">eventName</label>
+                </div>
+                <h5 class="card-title">Receiver</h5>    
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="receiver" placeholder="receiver"
+                        formControlName="receiver">
+                    <label for="reciever">Reciever</label>
+                </div>
+                <div>
+                        
+                        <div class="date-time-list">
+                           <div> 
+                            <h5 class="card-title">Year</h5>
+                            <select class="form-control" formControlName="year" >
+                                <option value="" disabled selected>Year</option>
+                                <!-- Génération des options pour les années de 2000 à 2050 -->
+                                <ng-container *ngFor="let year of getYears()">
+                                    <option [value]="year">{{ year }}</option>
+                                </ng-container>
+                            </select>
+                        </div>
+                        <div> 
+                            <h5 class="card-title">Month</h5>
+                            <select class="form-control" formControlName="month">
+                                <option value="" disabled selected>Month</option>
+                                <!-- Génération des options pour les mois de 1 à 12 -->
+                                <ng-container *ngFor="let month of getMonths()">
+                                    <option [value]="month">{{ month }}</option>
+                                </ng-container>
+                                
+                            </select>
+                        </div>
+                        <div> 
+                            <h5 class="card-title">Day</h5>
+                            <select class="form-control" formControlName="days">
+                                <option value="" disabled selected>Day</option>
+                                <!-- Génération des options pour les jours de 1 à 31 -->
+                                <ng-container *ngFor="let day of getDays()">
+                                    <option [value]="day">{{ day }}</option>
+                                </ng-container>
+                            </select>
+                        </div>
+                        <div> 
+                            <h5 class="card-title">Hours</h5>
+                            <select class="form-control" formControlName="hours">
+                                <option value="" disabled selected>Hours</option>
+                                <!-- Génération des options pour les heures de 00 à 23 -->
+                                <ng-container *ngFor="let hour of getHours()">
+                                    <option [value]="hour">{{ hour }}</option>
+                                </ng-container>
+                            </select>
+                        </div>
+                        
+                        <div> 
+                            <h5 class="card-title">Minutes</h5>
+                            <select class="form-control" formControlName="minutes">
+                                <option value="" disabled selected>Minutes</option>
+                                <!-- Génération des options pour les minutes de 00 à 59 -->
+                                <ng-container *ngFor="let minute of getMinutes()">
+                                    <option [value]="minute">{{ minute }}</option>
+                                </ng-container>
+                            </select>
+                        </div>
+
+
+                        </div>
+
+                        <div *ngIf="errorMessage" class="error-message">
+                            {{ errorMessage }}
+                          </div>
+                        
+                </div>
+             <!--    <div class="form-floating">
+                    <input type="text" class="form-control" id="receiver" placeholder="receiver"
+                        formControlName="hours">
+                    <label for="reciever">hours</label>
+                </div> -->
+               <!--  <div class="form-floating">
+                    <input type="text" class="form-control" id="receiver" placeholder="receiver"
+                        formControlName="minutes">
+                    <label for="reciever">minutes</label>
+                </div> -->
+            </div>
+<!-- --------------------------------------------------- -->
+          
+              
+
+
+<!-- --------------------------------------------------- -->
+             <!--  
+              <button (click)="getDateFromPicker()">Get Selected Date</button> -->
+
+              <p></p>
+              <p></p>
+              <p></p>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          <!--   <div class="text-center">
+                <button type="reset" class="btn btn-secondary">Reset</button>
+            </div> -->
+        </form>
+
+    </div>
+    <div>
+
+    </div>
+</div>
+
+<BUTTON (click)="showAvailability()" class="btn btn-primary" > show avaialable time </BUTTON>
+
+<BUTTON (click)="showMeeting()" class="btn btn-primary" > show meeting </BUTTON>
+
+
+
+
+
+
+</section>

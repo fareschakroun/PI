@@ -1,0 +1,138 @@
+<div class="void container" id="void">
+  <div class="crop">
+    <ul id="card-list" style="--count: 6">
+      <li *ngFor="let r of rooms">
+        <div class="cardd">
+          <span class="model-name">room for {{ r.typePack }} packs</span
+          ><span>
+            You can reserve your spot in the room by clicking on 'participate'
+            with the points from your account or by purchasing points.
+            <br />
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="Participate(r.idRoom)"
+            >
+              Participate
+            </button></span
+          >
+        </div>
+        <br /><br /><br />
+      </li>
+    </ul>
+    <div></div>
+    <div class="last-circle"></div>
+    <div class="second-circle"></div>
+  </div>
+  <div class="mask" style="margin-top: 100px">
+    <div class="card" *ngIf="test">
+      <div class="additional">
+        <div class="user-card">
+          <div class="level center"  *ngIf="testExistantRoom ">
+            <button
+            [disabled]="!testAvailablePlaces"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModalCenter"
+              class="btn btn-primary"
+            >
+              Confirm
+            </button>
+          </div>
+          
+         
+          <div class="level center"  *ngIf="!testExistantRoom ">
+            <button
+            
+              [disabled]="!testExistantRoom"
+              class="btn btn-primary"
+            >
+              You already participate
+            </button>
+          </div>
+          <div class="points center">
+            Available places
+            {{ room.maxParticipants - room.confirmedParticipant }}
+          </div>
+        </div>
+        <div class="more-info">
+          <h1>Details</h1>
+
+          <br />
+          <div class="coords">
+            <span>Start Date</span>
+            <span>{{ room.dateDebut | date : "MMMM d, y" }}</span>
+          </div>
+          <div class="coords">
+            <span>duration</span>
+            <span>{{ room.duration }}</span>
+            <br />
+          </div>
+          <div class="coords">
+            <span>Type pack</span>
+            <span>{{ room.typePack }}</span>
+            <br />
+          </div>
+
+          <div class="stats">
+            <div>
+              <div class="title">Entering price</div>
+              <i class="fa fa-trophy"></i>
+              <div class="value">{{ room.price }}</div>
+            </div>
+            <div>
+              <div class="title">maxParticipants</div>
+              <i class="fa fa-gamepad"></i>
+              <div class="value">{{ room.maxParticipants }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="general">
+        <h3>rules</h3>
+        <div
+          [innerHTML]="sanitizeHtml(room.description)"
+          class="formatted-text"
+        ></div>
+      </div>
+    </div>
+  </div>
+  <div class="center-circle"></div>
+  <div></div>
+</div>
+<div class="modal fade" id="exampleModalCenter">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Condition to enter the room</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>To enter the room you need minimum {{ room.price }} points !</p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          data-bs-dismiss="modal"
+          class="btn btn-primary"
+          (click)="userMyPoints(room.idRoom)"
+          *ngIf="testingPointsNumber"
+        >
+          Use your profile points
+        </button>
+
+        <button
+          type="button"
+          data-bs-dismiss="modal"
+          class="btn btn-primary"
+          (click)="navigateToPayments(room.idRoom)"
+        >
+          Buy Points
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

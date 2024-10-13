@@ -1,0 +1,22 @@
+/* Ensure horizontal scrolling for overflow */
+.table-scrollable {
+    overflow-x: auto;
+  }
+  
+  /* Set fixed table layout to prevent columns from resizing */
+  table {
+    table-layout: fixed;
+  }
+  
+  /* Apply ellipsis for text overflow */
+  td {
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflowing content */
+    text-overflow: ellipsis; /* Show ellipsis for overflowing text */
+  }
+  .table thead th {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+  

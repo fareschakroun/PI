@@ -1,0 +1,51 @@
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environment
+venv/
+ChatbotPython/chatbot/venv/
+# Ignore environment configuration files
+.env
+.env.*
+
+# Ignore local development settings
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+# Ignore logs and databases
+*.log
+*.sqlite3
+db.sqlite3
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE and editor-specific files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Ignore packaging and distribution files
+*.egg-info/
+dist/
+build/
+bin/
+parts/
+eggs/
+lib/
+lib64/
+develop-eggs/
+.installed.cfg
+
+# Ignore pipenv virtual environment
+Pipfile.lock

@@ -1,0 +1,78 @@
+<div class="container-fluid">
+
+<div class="row">
+  <div class="col-xl-6"  style="height: 500px;">
+    <div class="card">
+      <div class="card-header border-0 pb-0">
+        <h5 class="card-title">Scan code</h5>
+      </div>
+      <div class="card-body">
+        <zxing-scanner
+          [(device)]="currentDevice"
+          [formats]="formatsEnabled"
+          (scanSuccess)="onScanSuccess($event)"
+        ></zxing-scanner>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-6">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="card-title">Local Camera</h5>
+      </div>
+      <div class="card-body">
+        <div class="card text-white bg-primary" style="height: 150px;">
+          <div class="card-header" [class.blink]="isBlinking">
+            <h5 class="card-title text-white">Last scaned</h5>
+          </div>
+          <div class="card-body mb-0">
+            <div>
+              total Count == {{ currentEvent.presences.length }}
+              Last Added
+              {{ lastaddedPresence?.date  | date:'HH:mm:ss'}}
+            </div>
+          </div>
+        </div>
+
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Presence list</h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-responsive-md">
+                    <thead>
+                        <tr>
+                     
+                            <th><strong>User</strong></th>
+                        
+                            <th><strong>Date</strong></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let presense of currentEvent.presences">
+                          
+                
+                            <td><div class="d-flex align-items-center"><img src="../../../assets/images/avatar/1.jpg" class="rounded-lg me-2" width="24" alt=""/> <span class="w-space-no">Dr. Jackson</span></div></td>
+                   
+                            <td>{{ presense.date | date:'HH:mm:ss' }}</td>
+                           
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

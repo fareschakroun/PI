@@ -1,0 +1,83 @@
+
+<ng-template #recursiveComment let-comments>
+  <div *ngFor="let comment of comments.slice(0, displayCount)">
+    <div class="comment">
+      <div *ngIf="!(comment.comment.status == 'Declined')">
+        <div class="comment-box">
+          <div class="comment-header">
+            <div class="comment-avatar">
+              <img
+                src="../../../assets/images/inner-image/creator/img-1.png"
+                alt=""
+                class="avatar"
+              />
+            </div>
+            <div class="comment-details">
+              <h6 class="comment-author">{{ comment.comment.userID }}</h6>
+              <p class="comment-timestamp">Timestamp</p>
+            </div>
+          </div>
+
+          <div class="comment-content">
+            <p class="comment-text">
+              {{ comment.comment.comment }}
+              with likes = {{comment.comment.ActiveLike.id}}
+            </p>
+            <div class="comment-actions">
+              <div class="comment-like"(click)="savelike(comment.comment,'Like')" >
+                <i class="mdi mdi-thumb-up-outline f-20 text-blue" *ngIf="comment.comment.ActiveLike.status!='Like'"></i>
+
+                <i class="mdi mdi-thumb-up f-20 text-blue" *ngIf="comment.comment.ActiveLike.status=='Like'"></i>
+                <p class="comment-like-count">{{ comment.comment.likesCount }} Like</p>
+              </div>
+              <div class="comment-dislike" (click)="savelike(comment.comment,'Dislike')" >
+                <i class="mdi mdi-thumb-down-outline f-20 text-dark" *ngIf="comment.comment.ActiveLike.status!='Dislike'"></i>
+                <i class="mdi mdi-thumb-down f-20 text-dark" *ngIf="comment.comment.ActiveLike.status=='Dislike'"></i>
+                <p class="comment-dislike-count">{{ comment.comment.dislikesCount }} Dislike</p>
+              </div>
+              <div class="comment-reply" (click)="reply(comment)">
+                <p class="comment-reply-text">Reply</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reply-form mt-4" *ngIf="comment.replying">
+            <div class="reply-avatar">
+              <img
+              src="../../../assets/images/inner-image/creator/img-1.png"
+              alt=""
+              class="avatar"
+            />
+            </div>
+            <div class="reply-input">
+              <form [formGroup]="myform">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  formControlName="comment"
+                  placeholder="Add Your Comment"
+                  required="true"
+                />
+              </form>
+            </div>
+            <div class="reply-button">
+              <button class="btn btn-dark" (click)="sendReply(comment)">
+                Comment
+              </button>
+            </div>
+          </div>
+
+          <div class="replies">
+           <app-comment [comments]="comment.list" [previousComment]="comment"></app-comment>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <button *ngIf="comments.length>displayCount" (click)="increaseDisplayCount()">Load More</button>
+</ng-template>
+
+
+<div *ngTemplateOutlet="recursiveComment; context: { $implicit: comments }"></div>

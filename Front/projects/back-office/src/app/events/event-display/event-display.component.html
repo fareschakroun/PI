@@ -1,0 +1,214 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-xl-3 col-lg-6 col-md-6 col-xxl-5">
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane fade show active" id="first">
+                <img
+                  class="img-fluid"
+                  src="{{ event.imageUrl }}"
+                  alt=""
+                />
+              </div>
+             
+            </div>
+            <div class="tab-slide-content new-arrival-product mb-4 mb-xl-0">
+              <!-- Nav tabs -->
+              <ul class="nav slide-item-list mt-3" role="tablist">
+                
+                <li role="presentation"  *ngFor="let gallery of localImage">
+                  <a role="tab" data-bs-toggle="tab"
+                    ><img
+                      class="img-fluid"
+                      src="{{ gallery.imageUrl }}"
+                      alt=""
+                      width="50"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--Tab slider End-->
+          <div class="col-xl-9 col-lg-6 col-md-6 col-xxl-7 col-sm-12">
+            <div class="product-detail-content">
+              <!--Product details-->
+              <div class="new-arrival-content pr">
+                <h4> {{ event.name }}balbla</h4>
+                <div class="comment-review star-rating">
+                  <ul>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star"></i></li>
+                    <li><i class="fa fa-star-half-empty"></i></li>
+                    <li><i class="fa fa-star-half-empty"></i></li>
+                  </ul>
+                  <span class="review-text"> {{ event.interestedCounter }} / </span
+                  ><a
+                    class="product-review"
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#reviewModal"
+                    >See intrested people?</a
+                  >
+                </div>
+                <div class="d-table mb-2">
+                  <p class="price float-start d-block"> {{ event.type }}</p>
+                </div>
+                <p>
+               
+                  <span class="item">
+                    {{ event.date }}</span>
+                </p>
+                <p>number views : <span class="item">{{ event.viewsCounter }}</span></p>
+                
+                <p>Rating {{ event.rating | number: '1.2-2' }}</p>
+       <div> List of Interests 
+        <div *ngFor="let interest of event.interesteds">
+            <div> {{interest.userID}} </div>
+            <div> {{interest.timestamp}} </div>
+        </div>
+    </div>
+                <p class="text-content">
+                  {{event.note}}
+                </p>
+                
+                <div class="d-flex align-items-end flex-wrap mt-4">
+                
+                 
+                  <!--Quanatity End-->
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- review -->
+  <div class="modal fade" id="reviewModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Review</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="text-center mb-4">
+              <img
+                class="img-fluid rounded"
+                width="78"
+                src="../../../assets/images/avatar/1.jpg"
+                alt="DexignZone"
+              />
+            </div>
+            <div class="mb-3">
+              <div class="rating-widget mb-4 text-center">
+                <!-- Rating Stars Box -->
+                <div class="rating-stars">
+                  <ul id="stars">
+                    <li class="star" title="Poor" data-value="1">
+                      <i class="fa fa-star fa-fw"></i>
+                    </li>
+                    <li class="star" title="Fair" data-value="2">
+                      <i class="fa fa-star fa-fw"></i>
+                    </li>
+                    <li class="star" title="Good" data-value="3">
+                      <i class="fa fa-star fa-fw"></i>
+                    </li>
+                    <li class="star" title="Excellent" data-value="4">
+                      <i class="fa fa-star fa-fw"></i>
+                    </li>
+                    <li class="star" title="WOW!!!" data-value="5">
+                      <i class="fa fa-star fa-fw"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <textarea
+                class="form-control"
+                placeholder="Comment"
+                rows="5"
+              ></textarea>
+            </div>
+            <button class="btn btn-success btn-block">RATE</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-xl-3 col-lg-6 col-md-6 col-xxl-5">
+
+            <div class="answer-process-details" *ngFor="let rate of event.ratings" >
+              <div class="process-box">
+                <div class="d-flex align-items-center justify-content-start">
+                  <div class="process-image">
+                    <div class="avatar forum-profile">
+                      <!-- Photo profile de user   paladin -->
+                      <img
+                        src="../../../assets/images/inner-image/creator/img-1.png"
+                        alt=""
+                        class="img-fluid rounded-circle avatar-md"
+                      />
+                    </div>
+                  </div>
+                  <div class="profile-content ms-3">
+                    <div class="side-content d-flex">
+                      <!-- user name    paladin-->
+                      <h6 class="fw-bold mb-0"> {{rate.userID}} </h6>
+                      <p class="mb-0 ms-4 text-muted">
+                        <i
+                          class="mdi mdi-clock-outline f-18 me-2 align-middle"
+                        ></i
+                        > 
+                      </p>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="process-content">
+                  <p class="text-muted">
+                    {{rate.comment}}
+
+                  </p>
+                  <div class="d-flex mb-4">
+                    <div class="like d-flex align-items-center">
+                      <p class="mb-0 ms-2 fw-semibold text-muted">
+                        <ngb-rating [max]="5" [rate]="rate.rating" [readonly]="true"></ngb-rating> 
+                      </p>
+                    </div>
+                    <div>
+                      <button class="btn btn-danger" (click)="disableRating(rate)" *ngIf="rate.status=='Accepted'">Disable Rating</button>
+    <button class="btn btn-success" (click)="enableRating(rate)" *ngIf="rate.status=='Declined'">Enable Rating</button>
+                    </div>
+                  </div>
+                  <hr />
+                </div>
+              </div>
+  
+             
+            </div>
+
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            

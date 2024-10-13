@@ -1,0 +1,27 @@
+
+<div class="container" *ngIf="eventList.length > 0">
+
+ <c-carousel>
+    <c-carousel-indicators></c-carousel-indicators>
+    <c-carousel-inner>
+       
+            
+            <c-carousel-item *ngFor="let slide of eventList">
+                <img height="400px"
+                alt="{{slide.name}}"
+                class="d-block w-100"
+                loading="lazy"
+                src="{{slide.imageUrl}}"
+                />
+                
+                <c-carousel-caption class="d-none d-md-block">
+                    <h3 [routerLink]="['/display', slide.name]">{{slide.name}}</h3>
+                    <p>{{slide.note}}</p>
+                </c-carousel-caption>
+            </c-carousel-item>
+    </c-carousel-inner>
+    <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
+    <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
+  </c-carousel>
+  </div>
+  

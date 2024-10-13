@@ -1,0 +1,48 @@
+<p>update-classroom works!</p>
+
+
+<div class="col-md-8 offset-md-3"> 
+    <section id="contact" class="contact">
+        <div class="container">
+    
+            <div class="row mt-5 justify-content-center" data-aos="fade-up">
+                <div class="col-lg-10">
+                    <form [formGroup]="classroomForm">
+                        <div class="row">
+                           
+                                <div  class="col-md-6 form-group">
+                                    <label>Block</label>
+                                    <input type="text" class="form-control" name="block" id="block" placeholder="block" formControlName="block" required>
+                                </div>
+                        <div class="row"></div>
+    
+                        <div class="col-md-6 form-group mt-3 mt-md-0">
+                                    <label>level</label>
+                                    <input type="number" class="form-control" name="level" id="level" placeholder="level" formControlName="level" min="1" max="4" required>
+                        </div>
+                        <div class="row"></div>
+                        <div class="col-md-6 form-group mt-3 mt-md-0">
+                                <label>classRoomNumber</label>
+                                <input type="number" class="form-control" name="classRoomNumber" id="classRoomNumber" placeholder="classRoomNumber" formControlName="classRoomNumber" min="1" max="4"
+                                    required>
+                         </div>
+                        <div class="row"></div>
+                        </div>
+                        <div class="row"></div>
+                        <div class="row"></div>
+                      <p></p>
+                      <p></p>
+                      <p></p>
+                       <!--  <div class="text-center"> -->
+                            <button type="submit" aria-label="add" value="add"  class="btn btn-primary"   (click)="add()">Add new classroom </button>
+    <!--                         <input type="submit" aria-label="add" value="add"  class="btn btn-primary"  height="500" width="100" (click)="add()"> -->
+                        <!-- </div> -->
+                        
+                    </form>
+                </div>
+    
+            </div>
+    
+        </div>
+    </section>
+    </div>

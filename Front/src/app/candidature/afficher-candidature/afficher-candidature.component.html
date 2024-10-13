@@ -1,0 +1,71 @@
+
+<section id="services" class="services section-bg">
+
+    <div class="container" data-aos="fade-up">
+
+        <br>
+        <br>
+        <div class="input-group d-flex justify-content-center">
+            <div class="form-outline" data-mdb-input-init>
+                <input type="search" id="form1" class="form-control" [(ngModel)]="titre" (input)="afficherRech()" />
+            </div>
+            <button type="button" class="btn btn-primary"  data-mdb-ripple-init (click)="rechercheCV()">
+                <i class="mdi mdi-magnify"></i>
+            </button>
+        </div>
+        
+        <br>
+        <br>
+
+        <div class="row">
+            <ng-container *ngFor="let c of listCandidatures ;let i = index">
+                <div class="col-lg-4">
+                    <div class="card" *ngIf="c.status.toString()=='en_cours' && c.occ!=0">
+                        <div class="card-body">
+                            <h5 class="card-title">{{listUsers[i]["firstname"]}} {{listUsers[i]["lastname"]}}</h5>
+                            <p class="card-text">{{c.offer.description}}</p>
+                            <p class="card-text">Covering letter : <i class="mdi mdi-arrow-down-bold-circle mdi-24px" (click)="telechargerDocument(c.id)"></i></p>
+                            <p class="card-text">curriculum vitae : <i class="mdi mdi-arrow-down-bold-circle mdi-24px" (click)="telechargerDocument(c.id)"></i></p>
+                            <p class="card-text">CV Matching : <i class="mdi mdi-reload" (click)="getMatchCVE(c.id,user.id.toString())"></i></p>
+                            <p *ngIf="titre!=''">L'occurrence du mot {{titre}} : {{c.occ}}</p>
+                            <div class="d-flex justify-content-between"> 
+                                <button type="button" class="btn btn-success ml-auto" (click)="accepterCandidature(c.id.toString())">Accept</button>
+                                <button type="button" class="btn btn-primary mr-auto" (click)="refuserCandidature(c.id.toString())">Refuse</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" *ngIf="c.status.toString()=='accépté' && c.occ!=0">
+                        <div class="card-body">
+                            <h5 class="card-title">Nom et prenom du candidat {{c.idCandidat}} {{listUsers[i]["firstname"]}} {{listUsers[i]["lastname"]}}</h5>
+                            <p class="card-text">{{c.offer.description}}</p>
+                            <p class="card-text">Covering letter : <i class="mdi mdi-arrow-down-bold-circle mdi-24px"
+                                    (click)="telechargerDocument(c.id)"></i></p>
+                            <p class="card-text">curriculum vitae : <i class="mdi mdi-arrow-down-bold-circle mdi-24px"
+                                    (click)="telechargerDocument(c.id)"></i></p>
+                            <p class="card-text">CV Matching : <i class="mdi mdi-reload" (click)="getMatchCVE(c.id,user.id.toString())"></i></p>
+                            <p *ngIf="titre!=''">L'occurrence du mot {{titre}} : {{c.occ}}</p>
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-success">{{c.status}}</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" *ngIf="c.status.toString()=='refusé' && c.occ!=0">
+                        <div class="card-body">
+                            <h5 class="card-title">Nom et prenom du candidat {{c.idCandidat}} {{listUsers[i]["firstname"]}} {{listUsers[i]["lastname"]}}</h5>
+                            <p class="card-text">{{c.offer.description}}</p>
+                            <p class="card-text">Covering letter : <i class="mdi mdi-arrow-down-bold-circle mdi-24px"
+                                    (click)="telechargerDocument(c.id)"></i></p>
+                            <p class="card-text">curriculum vitae : <i class="mdi mdi-arrow-down-bold-circle mdi-24px"
+                                    (click)="telechargerDocument(c.id)"></i></p>
+                            <p class="card-text">CV Matching : <i class="mdi mdi-reload" (click)="getMatchCVE(c.id,user.id.toString())"></i></p>
+                            <p *ngIf="titre!=''">L'occurrence du mot {{titre}} : {{c.occ}}</p>
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-danger">{{c.status}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</section>

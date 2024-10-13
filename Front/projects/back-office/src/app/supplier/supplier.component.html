@@ -1,0 +1,221 @@
+<div class="card">
+  <div class="card-header">
+    <h5 class="card-title">Describe What You need from Suppliers</h5>
+  </div>
+  <div class="card-body">
+    <div class="basic-form">
+      <form [formGroup]="supplierForm" (ngSubmit)="onSubmit()" #formDir="ngForm">
+
+
+        <!-- General Form Elements -->
+
+
+        <div class="row mb-3">
+          <label *ngIf="productNameLabel === 'Product'" for="inputText" class="col-sm-2 col-form-label" style="white-space: nowrap;">Product Description</label>
+  <label *ngIf="productNameLabel !== 'Product'" for="inputText" class="col-sm-2 col-form-label" style="white-space: nowrap;">Service Description</label>
+          <div class="col-sm-8">
+            <textarea class="form-control custom-border" rows="4" formControlName="requirement"></textarea>
+          </div>
+        </div>
+
+        <!-- <div *ngIf="soloproduct"  class="row mb-3">
+        <label for="inputprodorservice" class="col-sm-3 col-form-label" style="margin-right:-30px ;">{{ productNameLabel}} Name</label>
+        <div class="col-sm-6">
+          <input type="prodorservice" class="form-control custom-border" #controlDir formControlName="productname">
+        </div>
+      </div> -->
+        <div *ngIf="productNameLabel === 'Product' && soloproduct" class="row mb-3">
+          <label for="inputprodorservice" class="col-sm-2 col-form-label">{{ productNameLabel}} Name</label>
+          <div class="col-sm-6">
+            <input type="prodorservice" class="form-control custom-border" formControlName="productname">
+          </div>
+        </div>
+        <div *ngIf="productNameLabel === 'Service' && soloproduct" class="row mb-3">
+          <label for="inputprodorservice" class="col-sm-2 col-form-label">{{ productNameLabel}} Name</label>
+          <div class="col-sm-6">
+            <input type="prodorservice" class="form-control custom-border" formControlName="servicename">
+          </div>
+        </div>
+        <div *ngIf="!soloproduct">
+          <div class="row mb-3">
+            <label for="inputProductName" class="col-sm-2 col-form-label">Product Name</label>
+            <div class="col-sm-6">
+              <input type="product" class="form-control custom-border" formControlName="productname">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputServiceName" class="col-sm-2 col-form-label" style="margin-right:-30px ;">Service
+              Name</label>
+            <div class="col-sm-6">
+              <input type="service" class="form-control custom-border" formControlName="servicename">
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputquantity" class="col-sm-2 col-form-label">Quantity</label>
+          <div class="col-sm-3">
+            <input type="quantity" class="form-control custom-border" formControlName="quantity">
+            <div *ngIf="quantity!.touched && quantity!.invalid" class="alert alert-danger">
+              check the quantity
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputPrice" class="col-sm-2 col-form-label">Price</label>
+          <div class="col-sm-3">
+            <input type="Price" class="form-control custom-border" formControlName="price">
+            <div *ngIf="price!.touched && price!.invalid" class="alert alert-danger">
+              check the price
+            </div>
+          </div>
+        </div>
+
+        <!--  <div class="row mb-3">
+          <label for="inputNumber" class="col-sm-2 col-form-label">Product Pciture</label>
+          <div class="col-sm-10">
+            <input class="form-control custom-border" type="file" id="formFile" formControlName=" requirementDesc">
+          </div>
+        </div> -->
+
+
+
+
+
+        <fieldset class="row mb-3">
+          <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="gridRadios1" value="product" checked
+                (change)="onRadioChange('option1')" formControlName="productorservice">
+              <label class="form-check-label" for="gridRadios1">
+                Product
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" id="gridRadios2" value="service"
+                (change)="onRadioChange('option2')" formControlName="productorservice">
+              <label class="form-check-label" for="gridRadios2">
+                Service
+              </label>
+            </div>
+           <!--  <div class="form-check disabled">
+              <input class="form-check-input" type="radio" id="gridRadios3" value="productandservice"
+                (change)="onRadioChange('option3')" formControlName="productorservice">
+              <label class="form-check-label" for="gridRadios3">
+                Product And Service
+              </label>
+            </div> -->
+          </div>
+        </fieldset>
+
+
+       
+        <div class="row">
+          <div class="col-6">
+          <input id="file" type="file" class="add-button" (change)="onFileChange($event)" accept="image/*" >
+          <label for="file" class="btn-1">
+            <span>Choose an image for your Product or Service</span>
+          </label>
+        </div>
+        <div class="col-6">
+          <img id="previewImage" src="" alt="Preview Image" style="display: none; max-width: 300px;">
+          </div>
+        </div>
+       
+
+        <div class="row mb-3">
+          <div class="col-sm-3">
+            <button type="submit" class="btn btn-danger" (click)="Checkform()">Validate</button>
+          </div>
+
+        </div>
+
+        <!-- End General Form Elements -->
+      </form>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- <input type="file" class="add-button" (change)="onFileChange($event)" />
+<button
+(click)="onUploadImages()"
+type="submit"
+class="btn btn-outline-dark"
+[disabled]="!image"
+> -->
+
+
+<!-- Recent Sales -->
+
+<!--  <div class="card recent-sales overflow-auto">
+
+      <div class="filter">
+        <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+          <li class="dropdown-header text-start">
+            <h6>Filter</h6>
+          </li>
+
+          <li><a class="dropdown-item" href="#">Today</a></li>
+          <li><a class="dropdown-item" href="#">This Month</a></li>
+          <li><a class="dropdown-item" href="#">This Year</a></li>
+        </ul>
+      </div> -->
+
+<!--   <div class="card-body">
+        <h5 class="card-title">Recent Requests <span>| Today</span></h5>
+
+        <table class="table table-borderless datatable">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Admin</th>
+              <th scope="col">Product/Service</th>
+              <th scope="col">Price</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><a href="#">#2457</a></th>
+              <td>Brandon Jacob</td>
+              <td><a href="#" class="text-primary">At praesentium minu</a></td>
+              <td>$64</td>
+              <td><span class="badge bg-success">Approved</span></td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="#">#2147</a></th>
+              <td>Bridie Kessler</td>
+              <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
+              <td>$47</td>
+              <td><span class="badge bg-warning">Pending</span></td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="#">#2049</a></th>
+              <td>Ashleigh Langosh</td>
+              <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
+              <td>$147</td>
+              <td><span class="badge bg-success">Approved</span></td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="#">#2644</a></th>
+              <td>Angus Grady</td>
+              <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
+              <td>$67</td>
+              <td><span class="badge bg-danger">Rejected</span></td>
+            </tr>
+            <tr>
+              <th scope="row"><a href="#">#2644</a></th>
+              <td>Raheem Lehner</td>
+              <td><a href="#" class="text-primary">Sunt similique distinctio</a></td>
+              <td>$165</td>
+              <td><span class="badge bg-success">Approved</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div> 
+
+    </div>-->

@@ -1,0 +1,159 @@
+.list-boxs {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.list-boxs .card {
+  width: 32%;
+  text-align: center;
+  position: relative;
+  max-width: 300px;
+  cursor: pointer;
+}
+.list-boxs div{
+  margin: 0.75%;
+}
+/* Ajoutez ici votre CSS existant */
+
+.title-box {
+  background-color: #FFF;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  color: #555;
+  font-weight: 700;
+  box-shadow: 0 10px 35px -10px rgba(0, 0, 0, .3);
+}
+
+.list-boxs .card:hover {
+  cursor: pointer;
+}
+
+.list-boxs .card .head,
+.list-boxs .card .body {
+  background-color: #FFF;
+  padding: 1.5rem 1rem;
+}
+
+.list-boxs .card .head {
+  color: #333;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  transform: translateY(50px);
+  transition: transform .3s linear;
+  border-bottom: 1px solid #F2F2F2;
+}
+
+.list-boxs .card:hover .head {
+  transform: translateY(0);
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, .1);
+}
+
+.list-boxs .card .ticket {
+  color: #0a0101;
+  width: 80%;
+  margin: 0 auto;
+  padding: 1rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  height: var(--ticket-height);
+  box-shadow: inset 0px 6px 6px -5px rgba(0, 0, 0, .25),
+              inset 0px -6px 6px -5px rgba(0, 0, 0, .25);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.list-boxs .card .ticket.diamond {
+  background-color: #0a0101; /* ou toute autre couleur pour standard */
+}
+.list-boxs .starter .ticket {
+  background-color: #fffd8d;
+}
+.list-boxs .diamond .ticket {
+  background-color: #fffd8d;
+}
+.list-boxs .standard .ticket {
+  background-color: #30ccc4;
+}
+.list-boxs .silver .ticket {
+  background-color: #0ed176;
+}
+
+
+.list-boxs .card:hover .ticket {
+  opacity: 1;
+}
+
+.list-boxs .card .body {
+  transform: translateY(-30px);
+  transition: transform .3s linear;
+}
+.list-boxs .card:hover .body {
+  transform: translateY(0);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+}
+
+.list-boxs .card p {
+  font-size: .95rem;
+  color: #333;
+  text-align: justify;
+}
+
+.list-boxs .card .btn {
+  margin-top: 2rem;
+  padding: .6rem 1rem;
+  outline: none;
+  font-size: .85rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  min-width: 160px;
+  border: 1px solid #555;
+  cursor: pointer;
+  transition: all .2s linear;
+}
+.list-boxs .card .btna {
+  margin-top: 2rem;
+  padding: .6rem 1rem;
+  outline: none;
+  font-size: .85rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  min-width: 160px;
+  border: 1px solid #555;
+  cursor: pointer;
+  transition: all .2s linear;
+}
+
+.list-boxs .card .btn:hover {
+  box-shadow: 0 5px 10px 1px rgba(0, 0, 0, .15);
+}
+
+.list-boxs .card .btna:hover {
+  box-shadow: 0 5px 10px 1px rgba(0, 0, 0, .15);
+}
+
+.list-boxs .starter .btn {
+  background: blue;
+  
+}
+.list-boxs .starter .btna {
+  background: #B22222;
+  
+}
+
+
+
+@media screen and (max-width: 750px) {
+  .list-boxs {
+    justify-content: space-around;
+  }
+  .list-boxs .card {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .list-boxs .card {
+    width: 95%;
+  }
+}

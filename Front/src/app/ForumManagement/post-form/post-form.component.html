@@ -1,0 +1,50 @@
+<button mat-icon-button style="float: right; margin: 5px;" matDialogClose>
+    <mat-icon aria-label="Close modal">close</mat-icon>
+  </button>
+  
+  <mat-dialog-content style="border-radius: 20px;">
+    <header>
+      <h1 mat-dialog-title class="dialog-title" style="font-family: 'Roboto', sans-serif; font-size: 25px;font-weight: 700!important; color: #052c65" >Add Post</h1>
+    </header>
+  
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-icon matSuffix>title</mat-icon>
+      <input matInput [(ngModel)]="post.title"  placeholder="Title..." style="width: 100%">
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-icon matSuffix>description</mat-icon>
+      <textarea matInput [(ngModel)]="post.descriptionSubject" placeholder="Description" rows="4" style="width: 100%"></textarea>
+    </mat-form-field>
+
+    <mat-icon matSuffix>Tag</mat-icon>
+  
+    <div class="tag-box mt-4 myfonts">
+      <div *ngFor="let tag of post.postTags">
+
+        <mat-icon matSuffix > {{tag.id}}</mat-icon>
+        <mat-icon matSuffix (click)="removeTag(tag)">X </mat-icon>
+      </div>
+     
+      </div>
+
+      <mat-form-field>
+        <mat-form-field>
+          <input type="text" placeholder="Choose an option" matInput [formControl]="myControl" [matAutocomplete]="auto" >
+          <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onOptionSelected($event)">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              {{ option }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+    <div appearance="fill" style="width: 80%">
+      <input type="file" placeholder="Upload image" (change)="onFileSelected($event)" style="width: 105%" accept="image/jpeg, image/png">
+    </div>
+
+
+ 
+  <mat-dialog-actions align="end" style="gap: 10px;">
+    <button mat-raised-button color="primary" style="background-color: #052c65;" (click)="savePost()" >Save</button>
+    <button mat-raised-button color="warn" style="background-color: #B22222;" matDialogClose>Cancel</button>
+  </mat-dialog-actions>
+  

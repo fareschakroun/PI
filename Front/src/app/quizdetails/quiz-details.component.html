@@ -1,0 +1,102 @@
+
+<h1>Quiz title id={{ test.id }}</h1>
+<div class="row">
+  <div class="col-6">
+
+    <div class="col-md-8 offset-md-2 text-center">
+      <h1>New Question </h1>
+    </div>
+
+
+    <div class="col-md-8 offset-md-3">
+      <section id="contact" class="contact">
+        <div class="container">
+
+          <form [formGroup]="QuestionForm">
+            <div class="row">
+
+
+              <div class="row">
+                <h6>Question</h6>
+                <div class="col-md-6 form-group">
+
+                  <input type="text" class="form-control" name="question" id="question"
+                         formControlName="question">
+                         
+                </div>
+                <div class="col-md-6 form-group">
+
+                  <input type="text" class="form-control" name="question" id="question"
+                         formControlName="coefficient">
+                         
+                </div>
+                <div *ngFor="let i of getRange()">
+                  <h6>Option {{ i  }}</h6>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <input type="text" class="form-control" [formControlName]="'options' + i">
+                    <input type="radio" [id]="QuestionForm.get('options' + i).value" [value]="i" formControlName="answer">
+                    <label [for]="'option' + i">Option {{i}}</label>
+                  </div>
+                </div>
+                
+                <button (click)="minusOption()" class="btn btn-info"> Minus Option </button>
+
+                <button (click)="addOption()" class="btn btn-success"> add Option </button>
+
+                
+                  
+              </div>
+              <!-- ------------------------------------------------- -->
+              <!-- -----------------------------------------------------
+-->
+              <div class="row"></div>
+              <!--   </div> -->
+              <div class="row"></div>
+              <div class="row"></div>
+              <p></p>
+              <p></p>
+              <p></p>
+              <!--  <div class="text-center"> -->
+              <button type="submit" aria-label="add" value="add" class="btn btn-primary" (click)="add()" >
+
+                Add
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </section>
+    </div>
+    <!-- ------------------------------------------------------------------------------------------------- -->
+  </div>
+  <div class="col-6">
+
+    <H1>la liste des questions</H1>
+    <p>afficher-classroom works!</p>
+    <h1 class="text-center" > Resservation clasroom List</h1>
+    <div class="container">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>question</th>
+          <th>answer</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let c of questionList">
+          <td> {{c.question}} </td>
+          <td> {{c.answer}} </td>
+          <td> {{c.option1}} </td>
+          <td>
+              <button (click)= "updatequestion(c)"  class="btn btn-info">Update </button> 
+          </td>
+          <td>
+             <button  (click)= "deleatequestion(c)" class="btn btn-danger" style="margin-left: 50px;">Delete </button> 
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

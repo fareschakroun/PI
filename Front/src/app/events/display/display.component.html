@@ -1,0 +1,203 @@
+<section class="item-detail section bg-light">
+  <!-- start container -->
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-lg-8">
+        <div class="inner-heading text-center">
+          <div class="mt-4">
+            <h1 class="fw-bold">Event Details</h1>
+          </div>
+        </div>
+
+        <div
+          class="heading-bottom-icon d-flex justify-content-center text-center"
+        >
+          <i class="mdi mdi-image-filter-vintage"></i>
+          <i class="mdi mdi-image-filter-vintage mx-2"></i>
+          <i class="mdi mdi-image-filter-vintage"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5 align-items-center">
+      <div class="col-lg-6">
+        <div class="back-home-image pe-4">
+          <!-- <img src="{{ event.imageUrl }}" alt="" class="image-fill" /> -->
+          <div *ngIf="event.images">
+
+            <c-carousel [interval]="0">
+              <c-carousel-inner>
+                <c-carousel-item *ngFor="let slide of eventImages.images">
+                  <img
+                  [src]="slide.imageUrl"
+                  alt="{{slide.name}}"
+                  class="d-block w-100"
+                  loading="lazy"
+                  />
+                </c-carousel-item>
+              </c-carousel-inner>
+              <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
+              <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
+            </c-carousel>
+          </div>
+          <img src="{{ event.imageUrl }}" alt="" class="image-fill"  *ngIf="event.images.length==0"/>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="backhome-content mt-4 mt-lg-0">
+          <h2 class="fw-bold">View our upcomming event details</h2>
+          <div class="d-flex mt-3 align-items-center">
+            <div *ngIf="interested" (click)="removeInterest()"
+              ><span
+                class="badge rounded-pill bg-white box-shadow text-dark f-16 fw-normal py-2 px-3"
+              >
+                <i class="mdi mdi-heart text-danger f-18 me-2 align-middle"></i
+                >{{ event.interestedCounter }}
+              </span></div
+            >
+
+            <div *ngIf="interested==false" (click)="addInterest()"
+              ><span
+                class="badge rounded-pill bg-white box-shadow text-dark f-16 fw-normal py-2 px-3"
+              >  
+                <i
+                  class="mdi mdi-heart-outline text-danger f-18 me-2 align-middle"
+                ></i
+                >{{ event.interestedCounter }}
+              </span></div
+            >
+
+            <div class="icon d-flex ms-auto">
+              <div class="like"></div>
+            </div>
+          </div>
+
+          <div class="tab-box my-4">
+            <ul class="nav nav-pills" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="pills-home-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-home"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-home"
+                  aria-selected="true"
+                >
+                  Details
+                </button>
+              </li>
+
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="pills-contact-tab"
+                  data-bs-toggle="pill"
+                  data-bs-target="#pills-contact"
+                  type="button"
+                  role="tab"
+                  aria-controls="pills-contact"
+                  aria-selected="false"
+                >
+                    Rate me
+                </button>
+              </li>
+            </ul>
+            <div class="tab-content mt-4 ps-3" id="pills-tabContent">
+              <div
+                class="tab-pane fade show active"
+                id="pills-home"
+                role="tabpanel"
+                aria-labelledby="pills-home-tab"
+              >
+                <p class="text-muted">{{ event.note }}</p>
+              </div>
+
+              <div
+                class="tab-pane fade"
+                id="pills-contact"
+                role="tabpanel"
+                aria-labelledby="pills-contact-tab"
+              >
+                <div class="message my-4">
+                  <form [formGroup]="myform">
+                  
+                 
+                    <ngb-rating [max]="5" formControlName="rating"></ngb-rating>
+                    <div class="submit-button mt-4">
+                      <button
+                        (click)="add()"
+                        class="btn btn-primary"
+                        type="submit"
+                      >
+                        Confirm
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4" />
+          <div class="row">
+            <div class="col-lg-6">
+              <h6 class="fw-bold mb-1">{{ event.type }}</h6>
+              <p class="fw-semibold">
+                {{ event.viewsCounter }} views <span class="text-muted"></span>
+              </p>
+            </div>
+            <div class="col-lg-6 text-end">
+              <h6 class="mb-0 fw-bold">Rating</h6>
+              <div class="countdown" id="countdown">
+                {{ event.rating | number : "1.2-2" }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="forum section bg-light">
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-lg-8 order-2 order-lg-1">
+          <div class="forum-item">
+              <div class="row d-flex align-items-center justify-content-start">
+                  <div class="col-sm-2 col-3">
+                      <div class="avatar forum-profile">
+                        <img
+                src="../../../assets/images/inner-image/creator/img-1.png"
+                alt=""
+                class="img-fluid rounded-circle avatar-md"
+              />
+                         
+                      </div>
+                  </div>
+                  <div class="col-xl-8 col-md-6 col-5 my-2">
+                      <form [formGroup]="commentForm">
+                          <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="comment"
+                              placeholder="Add Your Comment" name="comment" required="true">
+                      </form>
+                  </div>
+                  <div class="col-2">
+                      <button class="btn btn-dark" (click)="firstComment()">Comment</button>
+              </div>
+          </div>
+            <div class="answer-process-details" >
+              <div *ngIf="comments.length!=0 || !comments">
+                  <app-comment [comments]="comments" [previousComment]="comments[0].comment"></app-comment>
+                </div>
+                <div *ngIf="comments.length==0 " >
+                  <p> Be the First to Comment </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+  </section>
+

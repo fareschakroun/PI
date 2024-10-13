@@ -1,0 +1,180 @@
+<h1 style="margin-left: 10%">Create new event</h1>
+
+<hr />
+
+<form [formGroup]="newForm">
+  <section class="section">
+    <div class="row">
+      <div class="col">
+        <div class="card-body">
+          <div class="basic-form">
+            <h5 class="card-title">Please fill all the inputs</h5>
+            <div class="col" *ngIf="!mainImageAdded; else MainImageFound">
+              <div class="alert alert-danger">Main Image is Required</div>
+              <input type="file" (change)="onFileChange($event)" />
+              <button
+                (click)="onUploadMainImage()"
+                type="submit"
+                class="btn btn-outline-dark"
+                [disabled]="!image"
+              >
+                <i class="fas fa-upload"></i>
+                Upload
+              </button>
+            </div>
+            <br />
+            <ng-template #MainImageFound>
+              <div class="col-xs-12">
+                <img
+                  src="{{ mainImage.imageUrl }}"
+                  class="card-img-top"
+                  alt="Image 1"
+                  height="175px"
+                />
+                <div class="card-body">
+                  <h4 class="card-title">{{ mainImage.name }}</h4>
+                  <button
+                    class="btn btn-danger"
+                    (click)="deleteMainImage(mainImage.id)"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </ng-template>
+
+            <!-- Single ITEM-->
+
+            <!-- """""""""""""""""""""""""""""""" -->
+
+            <!-- Single ITEM-->
+            <div  class="mb-3 row">
+				<div class="mb-3 row">
+					<label class="col-sm-2 col-form-label col-form-label-sm">Event Name</label>
+					<div class="col-sm-10">
+						<input  type="text"
+						formControlName="name"
+						name="name" class="form-control form-control-sm" placeholder="eventName">
+					</div>
+				</div>
+    
+              <div
+                class="alert alert-danger"
+                *ngIf="Name!.touched && Name!.invalid"
+              >
+                Event Name is Required
+              </div>
+              <br />
+              <br />
+
+			  <div class="mb-3 row">
+				<label class="col-sm-2 col-form-label col-form-label-sm">Event Date</label>
+				<div class="col-sm-10">
+					<input     type="date"
+                    formControlName="date" class="form-control form-control-sm" placeholder="eventName">
+				</div>
+			</div>
+
+             
+              <div
+                class="alert alert-danger"
+                *ngIf="Date!.touched && Date!.invalid"
+              >
+                Event Date is Required
+              </div>
+              <div  class="mb-3 row">
+                <div class="mb-3 row">
+                  <label class="col-sm-2 col-form-label col-form-label-sm">Description</label>
+              <textarea class="form-control" formControlName="note" rows="4" id="note" style="height: 123px;"></textarea>
+            </div>
+          </div>
+              <!-- """""""""""""""""""""""""""""""" -->
+              <!-- """""""""Radio buttons from type"""""""" -->
+
+              <fieldset class="row mb-3">
+                <legend class="col-form-label col-sm-2 pt-0">Type</legend>
+                <div class="col-sm-10">
+                  <div
+                    class="form-check"
+                    *ngFor="let item of eventType | keyvalue"
+                  >
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="type"
+                      id="{{ item.key }}"
+                      value="{{ item.key }}"
+                      formControlName="type"
+                    />
+                    <label class="form-check-label" for="{{ item.key }}">
+                      {{ item.value }}
+                    </label>
+                  </div>
+
+                  <div
+                    class="alert alert-danger"
+                    *ngIf="Type!.touched && Type!.invalid"
+                  >
+                    A Type must be Selected
+                  </div>
+                </div>
+              </fieldset>
+              <!-- """""""""""""""""""""""""""""""" -->
+            </div>
+          </div>
+          <div>
+            <input type="file" (change)="onFileChange($event)" />
+            <button
+              (click)="onUploadImages()"
+              type="submit"
+              class="btn btn-outline-dark"
+              [disabled]="!image"
+            >
+              <i class="fas fa-upload"></i>
+              Add To Galery
+            </button>
+          </div>
+		  <br>
+          <button
+            type="Submit"
+			class="btn btn-primary "
+            (click)="add()"
+            aria-label="Sizing example input"
+            [disabled]="mainImageAdded == false && !newForm.valid"
+          >
+            <span
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+              *ngIf="uploadingFile"
+            ></span>
+            Submit Event
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</form>
+<!-- FORM END******************************************-->
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let image of images">
+      <div class="card">
+        <img
+          src="{{ image.imageUrl }}"
+          class="card-img-top"
+          alt="{{ image.name }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">
+            {{ image.name }}
+          </h5>
+        </div>
+        <button class="btn btn-danger" (click)="deleteImage(image.id)">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

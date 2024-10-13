@@ -1,0 +1,42 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    eureka-service-url:
+      defaultZone: http://localhost:8761/eureka
+server:
+  port: 8050
+spring:
+  application:
+    name: Claim
+  config:
+    import: optional:configserver:http://localhost:8888
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ClaimManagement?createDatabaseIfNotExist=true
+    hikari:
+      username: root
+      password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+
+
+
+
+
+
+
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: salma.saidi@esprit.tn
+    password: "lpoq fsrm byny cpqh"
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true

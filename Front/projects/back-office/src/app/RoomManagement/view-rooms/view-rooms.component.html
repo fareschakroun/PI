@@ -1,0 +1,77 @@
+
+
+    <div class="container-fluid">
+      <div class="row">
+       
+        <div class="col-lg-12 col-xl-6" *ngFor="let room of rooms; let i = index">
+            <div class="card"  *ngIf="i % 2 === 0">
+                <div class="card-body" >
+                    <div class="menu-product d-flex" >
+                      <div > 
+                        <div class="content-detail-wrap"  >	
+                            <div *ngIf="room.typePack === 'diamond'">
+                                <h4>  <i class="ri-vip-diamond-fill"></i></h4>
+                                <span>room for  {{room.typePack}} packs</span>
+                            </div>
+                            <div  *ngIf="room.typePack === 'silver'">
+                                <h4>     <i class="ri-medal-2-fill fa-100x"></i>
+                                </h4>
+                                <span>room for  {{room.typePack}} packs</span>
+                            </div>
+                            <div *ngIf="room.typePack === 'standard'">>
+                                <h4>    <i class="bx bxl-500px"></i></h4>
+                                <span>room for  {{room.typePack}} packs</span>
+                            </div>
+                            <div class="mt-4 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="mb-0"><span class="fs-14 me-2">start From</span>{{room.price | currency:'DT'}} </h5>
+                                    <div [innerHTML]="sanitizeHtml(room.description.length > 500 ? room.description.slice(0, 500) + '...' : room.description )" class="formatted-text"></div>
+                                </div>
+                                <div>
+                                    <a  class="btn btn-danger"  [routerLink]="['detailRoom', room.idRoom]" >detail</a>
+                                </div>
+                            </div>
+                        </div>	
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card"  *ngIf="i % 2 !== 0">
+                <div class="card-body" >
+                    <div class="menu-product d-flex" >
+                      <div > 
+                        <div class="content-detail-wrap"  >	
+                            <div *ngIf="room.typePack === 'diamond'">
+                                  <i class="ri-vip-diamond-fill"></i>
+                                <span>room for  {{room.typePack}} packs</span>
+                            </div>
+                            <div  *ngIf="room.typePack === 'silver'">
+                                <h4>     <i class="ri-medal-2-fill fa-100x"></i>
+                                </h4>
+                                <span>room for  {{room.typePack}} packs</span>
+                            </div>
+                            <div *ngIf="room.typePack === 'standard'">>
+                                <h4>    <i class="bx bxl-500px"></i></h4>
+                                <span>room for  {{room.typePack}} packs</span>
+                            </div>
+                            <div class="mt-4 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h5 class="mb-0"><span class="fs-14 me-2">start From</span>{{room.price | currency:'DT'}} </h5>
+                                    <div [innerHTML]="sanitizeHtml(room.description.length > 500 ? room.description.slice(0, 500) + '...' : room.description )" class="formatted-text"></div>
+                                </div>
+                                
+                                <div>
+                                    <a  class="btn btn-danger"  [routerLink]="['detailRoom', room.idRoom]" >detail</a>
+                                </div>
+                            </div>
+                        </div>	
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+      
+    </div>
+  </div>

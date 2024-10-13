@@ -1,0 +1,39 @@
+<section id="services" class="services section-bg">
+    <div class="container" data-aos="fade-up">
+        <div class="row">
+            <div *ngIf="listCandidatures.length==0">La liste est vide</div>
+            <ng-container *ngFor="let c of listCandidatures ;let i = index">
+                <div class="col-lg-4">
+                    <div class="card" *ngIf="c.status.toString()=='en_cours'">
+                        <div class="card-body">
+                            <h5 class="card-title">{{listUsers[i]["name"]}}</h5>
+                            <p class="card-text">{{user.firstname}} {{user.lastname}}</p>
+                            <p class="card-text">{{c.offer.titre}}</p>
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-warning">{{c.status}}</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" *ngIf="c.status.toString()=='accépté'">
+                        <div class="card-body">
+                            <h5 class="card-title">Nom et prenom du candidat {{c.idCandidat}}</h5>
+                            <p class="card-text">{{c.offer.titre}}</p>
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-success">{{c.status}}</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" *ngIf="c.status.toString()=='refusé'">
+                        <div class="card-body">
+                            <h5 class="card-title">Nom et prenom du candidat {{c.idCandidat}}</h5>
+                            <p class="card-text">{{c.offer.titre}}</p>
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-danger">{{c.status}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</section>

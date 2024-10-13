@@ -1,0 +1,62 @@
+<div class="content-body">
+    <div class="container-fluid">
+        <!-- row -->
+
+        <div class="row">
+<div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Applications </h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-responsive-md">
+                    <thead>
+                        <tr>
+                            <th style="width:50px;">
+                                <div class="form-check custom-checkbox checkbox-success check-lg me-3">
+                                    <input type="checkbox" class="form-check-input" id="checkAll" required="">
+                                    <label class="form-check-label" for="checkAll"></label>
+                                </div>
+                            </th>
+                            <th><strong>ROLL NO.</strong></th>
+                            <th><strong>NAME</strong></th>
+                            <th><strong>Offer</strong></th>
+                            <th><strong>Date</strong></th>
+                            <th><strong>Status</strong></th>
+                            <th><strong></strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let c of listCandidatures ;let i=index">
+                            <td>
+                                <div class="form-check custom-checkbox checkbox-success check-lg me-3">
+                                    <input type="checkbox" class="form-check-input" id="customCheckBox2" required="">
+                                    <label class="form-check-label" for="customCheckBox2"></label>
+                                </div>
+                            </td>
+                            <td><strong>{{c.id}}</strong></td>
+                            <td>
+                                <div class="d-flex align-items-center"><img src="images/avatar/1.jpg"
+                                        class="rounded-lg me-2" width="24" alt="" /> <span class="w-space-no">{{c.idCandidat}}{{listUsers[i]["firstname"]}} {{listUsers[i]["lastname"]}}</span></div>
+                            </td>
+                            <td>{{c.offer.titre}} </td>
+                            <td>{{c.applicationDate| date:'dd MMMM yyyy'}}</td>
+                            <td>
+                                <div class="d-flex align-items-center" *ngIf="c.status.toString()=='accépté'"><i class="fa fa-circle text-success me-1"></i>
+                                    Accepted</div>
+                                <div class="d-flex align-items-center" *ngIf="c.status.toString()=='en_cours'"><i
+                                        class="fa fa-circle text-warning me-1"></i>
+                                    In Progress</div>
+                                <div class="d-flex align-items-center" *ngIf="c.status.toString()=='refusé'"><i
+                                        class="fa fa-circle text-danger me-1"></i>
+                                    Refused</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

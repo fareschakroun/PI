@@ -1,0 +1,67 @@
+<p>afficher-classroom works!</p>
+
+
+<h1 class="text-center" > Reservation classroom List</h1>
+<div class="container">
+
+<table class="table table-striped">
+        <thead>
+          <tr> 
+              <th>Block</th>
+              <th>Level</th>
+              <th>Classroom Number</th>
+              <th>Start Time Reservation</th>
+              <th>End Time Reservation</th>
+              <th>Update</th>
+              <th>Delete</th>
+            <th>free dates</th>
+            </tr>
+
+            </thead>
+        <tbody>
+            <tr *ngFor="let c of classroomList">
+                <td> {{c.block}} </td>
+                <td> {{c.level}} </td>
+                <td> {{c.classRoomNumber}} </td>
+                <td> {{c.start}} </td>
+                <td> {{c.end}} </td>
+
+                <td>
+                  <button (click)= "updateClassroom(c.id)"  class="btn btn-info">Update </button>
+                </td>
+                <td>
+                  <button  (click)= "deleateClassroom(c.id)" class="btn btn-danger" style="margin-left: 50px;">Delete </button>
+                </td>
+                
+                <td><button  (click)= "showFreeDates(c.id)"   class="btn btn-sucess" style="margin-left: 50px;">shoow free dates </button></td>
+               
+            </tr>
+        </tbody>
+
+</table>
+
+  <br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="list-style" (scroll)="onScroll($event)">
+  <div class="list-item" *ngFor="let item of freeappointementList">{{ item }}</div>
+</div>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+

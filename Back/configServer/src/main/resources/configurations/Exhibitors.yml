@@ -1,0 +1,31 @@
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    eureka-service-url:
+      defaultZone: http://localhost:8762/eureka
+server:
+  port: 8763
+  servlet:
+    context-path: /exhibitor
+spring:
+  application:
+    name: Exhibitors
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/Exhibitor?createDatabaseIfNotExist=true
+    hikari:
+      username: root
+      password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+
+application:
+  config:
+    booths-url: http://localhost:8362/api/Booths
+
+
+

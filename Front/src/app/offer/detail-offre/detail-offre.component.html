@@ -1,0 +1,126 @@
+<div class=".modal-dialog">
+    <ng-template #content let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title">Lettre de motivation</h4>
+        </div>
+        <div class="modal-body">
+            <form #fo="ngForm">
+                <p>Veillez doposer votre lettre de motivation</p>
+                <div class="txt_field">
+                    <input type="file" [(ngModel)]="titre"  class="form-control" multiple="multiple" name="file" id="file"  formControlName="file" (change)="onFileSelected($event)" 
+                           #fileInput required>
+                </div>
+                <br>
+                <p>Your cv matching : <b>{{titre}} %</b></p>
+                <br>
+                <button class="btn btn-light" (click)="postuler()" type="submit">Valider</button>
+            </form>
+        </div>
+    </ng-template>
+</div>
+
+
+
+<div class="card-body">
+<!--
+    <zxing-scanner #scanner  (scanSuccess)="onScanSuccess($event)"
+        (scanError)="onScanError($event)"></zxing-scanner>
+-->
+<section class="item-detail section bg-light">
+
+<div class="row mt-5 align-items-center">
+    <div class="col-lg-6">
+        <div class="back-home-image pe-4">
+            <img src="./assets/images/blog-2/top4.png" alt="" class=" image-fill">
+        </div>
+    </div>
+    <!-- start container -->
+            <div class="col-lg-6">
+                <div class="backhome-content mt-4 mt-lg-0">
+                    <h2 class="fw-bold">Detail of the offer</h2>
+                    
+                    <div class="d-flex mt-3 align-items-center">
+                        <a href="#"><span
+                                class="badge rounded-pill bg-white box-shadow text-dark f-16 fw-normal py-2 px-3">
+                                <i class="mdi mdi-account text-danger f-18 me-2 align-middle"></i>{{offer.nbrCandidature}}
+                            </span></a>
+
+                        <div class="icon d-flex ms-auto">
+                            <div class="like" *ngIf="user.role=='exhibitor'">
+                                <a><i class="mdi mdi-delete" (click)="supprimer()"></i></a>
+                            </div>
+                            <div class="menu ms-3" *ngIf="user.role=='exhibitor'">
+                                <div class="dropdown" >
+                                        <a href="#" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                            aria-expanded="false"><i class="mdi mdi-update" [routerLink]="['/modifier', offer.id]">
+                                            </i>
+                                        </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="text-muted"><b>{{offer.titre}}</b> : {{offer.offer}}</p>
+                    </div>
+
+                    <div class="tab-box my-4">
+                        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                                    aria-selected="true">Details</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-profile" type="button" role="tab"
+                                    aria-controls="pills-profile" aria-selected="false">Exhibitor</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-contact" type="button" role="tab"
+                                    aria-controls="pills-contact" aria-selected="false">Document</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content mt-4 ps-3" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                aria-labelledby="pills-home-tab">
+                                <p class="text-muted">{{offer.description}}</p>
+                            </div>
+                            <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                                aria-labelledby="pills-profile-tab">
+                                <p class="text-muted">{{offer.exibitorId}} {{entr["name"]}} </p>
+                            </div>
+                            <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                                aria-labelledby="pills-contact-tab">
+                                <a [href]="offer.file" download="nom_du_fichier.pdf" type="application/pdf">
+                                    <svg xmlns="http://www.w3.org/2000/svg" (click)="telechargerDocument(offer.id)" width="30" height="30"
+                                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                        <path
+                                            d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+                    
+                    <div class="d-flex">
+                        <div *ngIf="user.role=='student' && !applied && comparaisonDate   || user.role=='alumni' && !applied && comparaisonDate ">
+                            <!--<button class="btn btn-primary" (click)="openLg(content)">Apply</button>-->
+                            <button class="btn btn-primary" (click)="getPourcentageMatch(offer.id.toString(),user.id.toString())">Apply</button>
+                        </div>
+                        <div *ngIf="user.role=='student' && applied && comparaisonDate || user.role=='alumni' && applied && comparaisonDate">
+                            <button class="btn btn-primary" disabled>Apply</button>
+                        </div>
+                        <div *ngIf="user.role=='student' && !comparaisonDate || user.role=='alumni' && !comparaisonDate">
+                            <button class="btn btn-primary" disabled>Date expired</button>
+                        </div>
+                        <div *ngIf="user.role=='exhibitor'">
+                            <button class="btn btn-outline-primary ms-2"[routerLink]="['/offer/applications', offer.id]">View Applications</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>

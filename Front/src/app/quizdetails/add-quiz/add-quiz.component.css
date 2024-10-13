@@ -1,0 +1,22 @@
+.container {
+    max-width: 200%; /* Adjust the maximum width as per your requirement */
+    margin: 0 auto;
+  }
+  
+  .form-control {
+    width: calc(100% - 20px); /* Adjust the width of form controls */
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+  }
+  
+  .btn {
+    width: calc(50% - 10px); /* Adjust the width of buttons */
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 3px;
+    margin-right: 5px;
+  }
+
+  

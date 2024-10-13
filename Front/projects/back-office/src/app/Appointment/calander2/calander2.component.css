@@ -1,0 +1,69 @@
+/* Add global styles */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Style the 'Add an Appointment' button */
+.btn-add-appointment {
+    margin-bottom: 20px;
+}
+
+/* Style the card containing the form */
+.card-form {
+    margin-top: 20px;
+}
+
+/* Style the form elements */
+.form-floating {
+    margin-bottom: 15px;
+}
+
+/* Center the buttons */
+.text-center {
+    text-align: center;
+}
+
+/* Optional: Add styles for the 'Get Selected Date' button */
+.btn-get-date {
+    margin-top: 15px;
+}
+
+/* Optional: Add styles for the submit and reset buttons */
+.btn-submit {
+    margin-right: 10px;
+}
+.btn-reset {
+    margin-left: 10px;
+}
+
+
+.time-picker{
+
+position: absolute;
+display: inline-block;
+padding: 10px;
+background: #eeeeee;
+border-radius: 6px;
+
+}
+.time-picker_select{
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance:  none ;
+
+}
+
+
+
+.date-time-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date-time-list select {
+    width: 100px; /* Ajustez la largeur selon vos préférences */
+    margin-right: 10px; /* Ajoute une marge entre chaque liste déroulante */
+}
+.error-message{color: red;}

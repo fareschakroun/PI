@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: AuthenticationService
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/BoothAndSupplier?createDatabaseIfNotExist=true
+    hikari:
+      username: root
+      password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    eureka-service-url:
+      defaultZone: http://localhost:8761/eureka
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.security.web: DEBUG

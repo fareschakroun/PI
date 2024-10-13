@@ -1,0 +1,86 @@
+
+
+<body>
+
+    
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <div class="container-fluid">
+                <!-- row -->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Status Of Offers</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="morris_donught" class="morris_chart_height">
+                                            <div id="chart">
+                                                <apx-chart [series]="chartOptions_status.series" [chart]="chartOptions_status.chart" [labels]="chartOptions_status.labels"
+                                                    [responsive]="chartOptions_status.responsive" [colors]="chartOptions_status.colors"></apx-chart>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Offers Per Year</h4>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <div id="morris_line" class="morris_chart_height">
+                                            <select class="form-select" aria-label="Default select example" name="year" id="year"
+                                                (change)="selectType($event)">
+                                                <option value="2024">2024</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2020">2020</option>
+                                            </select>
+                                            <div id="chart">
+                                                <apx-chart [series]="chartOptions_year.series" [chart]="chartOptions_year.chart"
+                                                    [labels]="chartOptions_year.xaxis.categories" [responsive]="chartOptions_year.responsive"
+                                                    [colors]="chartOptions_year.colors"></apx-chart>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Offers By Type</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="morris_bar" class="morris_chart_height">
+                                            <apx-chart [series]="chartOptions_type.series" [chart]="chartOptions_type.chart"
+                                                [labels]="chartOptions_type.labels" [responsive]="chartOptions_type.responsive"
+                                                [colors]="chartOptions_type.colors"></apx-chart>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            
+        </div>
+ 
+</body>
+
+<!-- Mirrored from lezato.dexignzone.com/xhtml/chart-morris.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 22 Feb 2024 17:42:30 GMT -->
+ 

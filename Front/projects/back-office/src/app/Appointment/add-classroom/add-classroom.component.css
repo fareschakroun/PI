@@ -1,0 +1,27 @@
+
+
+.form-group {
+    display: inline-block;
+    margin-right: 20px; /* Ajustez la marge selon vos préférences */
+    text-align: right; /* Aligner le texte à droite */
+}
+
+.form-floating {
+    margin-bottom: 15px; /* Ajoute une marge inférieure entre chaque paire d'éléments */
+}
+
+
+
+.error-message{color: red;}
+.date-time-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date-time-list select {
+    width: 100px; /* Ajustez la largeur selon vos préférences */
+    margin-right: 10px; /* Ajoute une marge entre chaque liste déroulante */
+}
+

@@ -1,0 +1,94 @@
+<div class="deznav">
+  <div class="deznav-scroll">
+    <div class="plus-box">
+      <img src="images/plus.png" alt="">
+      <h5 class="fs-18 font-w700">Add Menus</h5>
+      <p class="fs-14 font-w400">Manage your food <br>and beverages menus<i class="fas fa-arrow-right ms-3"></i></p>
+    </div>
+    <div class="copyright">
+      <p><strong>Lezato Restaurant Admin</strong> © 2021 All Rights Reserved</p>
+      <p class="fs-12">Made with <span class="heart"></span> by DexignZone</p>
+    </div>
+  </div>
+</div>
+
+
+ <div class="container-fluid">
+  <div class="row">
+    
+    <div class="nav-header" style="margin-left:15px">
+      <img alt="image"  src="../assets/images/logoEsprit.png" width="200px" height="150px">
+
+    </div>
+    <div class="container-fluid">
+      <div class="header" >
+
+      <div class="header-content" *ngIf="token">
+        <nav class="navbar navbar-expand">
+          <div class="collapse navbar-collapse justify-content-between">
+            <div class="header-left">
+              <div class="nav-item">
+                <div class="input-group search-area">
+                  <input type="text" class="form-control" placeholder="Search here">
+                  <span class="input-group-text"><a ><i
+                        class="flaticon-381-search-2"></i></a></span>
+                </div>
+              </div>
+            </div>
+            <ul class="navbar-nav header-right">
+              <li class="nav-item recipe">
+                <a class="btn btn-primary btn-rounded" href="http://localhost:4203/auth" (click)="disconnect()">Log out</a>
+              </li>
+
+
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  
+</div>
+
+</div>
+  <div class="row">
+    <div class="col-3">
+      <div class="deznav">
+        <div class="deznav-scroll" *ngIf="token">
+          <ul class="metismenu" id="menu">
+            <ul aria-expanded="false">
+              <li><a routerLink="/booth">Adjust booth placement</a></li>
+              <li><a routerLink="/supplier">Add a supplier request</a></li>
+              <li><a routerLink="/boothDashboard">Supply Requests Table </a></li>
+            </ul>
+              <ul aria-expanded="false">
+                <li><a routerLink="/viewPack">viewPack</a></li>
+                <li><a routerLink="/viewRooms">viewRooms</a></li>
+                <li><a routerLink="/checkPayments">ckeckOutPayment</a></li>
+                <li><a routerLink="/packSalesPerYear">Statics</a></li>
+              </ul>
+              <ul aria-expanded="false">
+                <li><a routerLink="/admin/offers">Offers</a></li>
+                <li><a routerLink="/admin/stat">Stats</a></li>
+              </ul>
+            <ul aria-expanded="false">
+              <li><a routerLink="/Eventlist">Event List</a></li>
+              <li><a routerLink="/stats">Stats</a></li>
+              <li><a routerLink="/events/create">Create events</a></li>
+            
+            </ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+   <div class="col-9" style="margin-top: 120px; margin-left: -50px;">
+
+    <router-outlet ></router-outlet>
+</div>
+</div>
+
+      
+
+  </div> 

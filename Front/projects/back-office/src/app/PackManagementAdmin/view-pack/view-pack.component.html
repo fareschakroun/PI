@@ -1,0 +1,249 @@
+<section class="section-prices">
+  <div class="card-body">
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#largeModal"
+    >
+      Add new room
+    </button>
+    <div class="modal fade" id="largeModal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Create new room</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <section class="section">
+              <div class="row">
+                <div class="card">
+                  <div class="card-body">
+                    <br />
+                    <form (ngSubmit)="addRooms()" #addPackForm="ngForm">
+                      <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label"
+                          >Select Pack Type</label
+                        >
+                        <div class="col-sm-10">
+                          <select
+                            class="form-select"
+                            aria-label="Default select example"
+                            id="typePack"
+                            name="typePack"
+                            [(ngModel)]="room.typePack"
+                          >
+                            <option value="0">diamond</option>
+                            <option value="1">silver</option>
+                            <option value="2">standard</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="inputNumber" class="col-sm-2 col-form-label"
+                          >Start date</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            id="dateDebut"
+                            [(ngModel)]="room.dateDebut"
+                            name="dateDebut"
+                            type="datetime-local"
+                            class="form-control"
+                            required
+                            [min]="getCurrentDateTime()"
+                          />
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="inputNumber" class="col-sm-2 col-form-label"
+                          >Duration
+                        </label>
+                        <div class="col-sm-10">
+                          <input
+                            id="duration"
+                            [(ngModel)]="room.duration"
+                            name="duration"
+                            type="number"
+                            class="form-control"
+                            required
+                            min="0"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="inputNumber" class="col-sm-2 col-form-label"
+                          >Maximum participant number
+                        </label>
+                        <div class="col-sm-10">
+                          <input
+                            id="maxParticipants"
+                            [(ngModel)]="room.maxParticipants"
+                            name="maxParticipants"
+                            type="number"
+                            class="form-control"
+                            required
+                            min="0"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="inputNumber" class="col-sm-2 col-form-label"
+                          >Entering points
+                        </label>
+                        <div class="col-sm-10">
+                          <input
+                            id="price"
+                            [(ngModel)]="room.price"
+                            name="price"
+                            type="number"
+                            class="form-control"
+                            required
+                            min="0"
+                          />
+                        </div>
+                      </div>
+
+                      <ckeditor name="description" id="description" [(ngModel)]="room.description" [config]="editorConfig"></ckeditor>
+                      <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label"></label>
+                        <div class="col-sm-10">
+                          <button type="submit" class="btn btn-primary">
+                            Save
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Vertically centered Modal-->
+  </div>
+
+  <hr />
+  <div  type="button" class="title-box">
+    <span  class="badge bg-dark" [routerLink]="'/addPack'"
+      ><i class="bi bi-folder me-1"></i> Add Pack</span
+    >
+    <h2 class="section-header">Packs</h2>
+  </div>
+  <br />
+ 
+
+  <div class="custom-tab-1">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a href="#my-posts" data-bs-toggle="tab" class="nav-link active show"
+          >Auction Packs</a
+        >
+      </li>
+      <li class="nav-item">
+        <a href="#about-me" data-bs-toggle="tab" class="nav-link"
+          >Booths Packs</a
+        >
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div id="my-posts" class="tab-pane fade active show">
+        <div class="list-boxs">
+          <div
+            class="card starter"
+            *ngFor="let pack of packsAuction"
+            [ngClass]="getPackStyle(pack.typePack)"
+          >
+            <div class="head">
+              {{ pack.typePack }}
+              <br /><span
+                class="badge"
+                [ngClass]="pack.reserved ? 'bg-success' : 'bg-danger'"
+              >
+                {{ pack.reserved ? "Reserved" : "Not Reserved" }}
+              </span>
+            </div>
+            <div class="ticket">{{ pack.price }} DT</div>
+            <div class="body">
+              <p>
+                {{ pack.description }}
+              </p>
+              <button
+                [routerLink]="['detail', pack.idPack]"
+                type="button"
+                class="btn btn-danger"
+              >
+                View Details
+              </button>
+              <br />
+              <hr />
+              <a
+                ><span
+                  class="badge"
+                  (click)="deletePack(pack.idPack)"
+                  [ngClass]="'bg-danger'"
+                >
+                  remove
+                </span></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="about-me" class="tab-pane fade">
+        <div class="list-boxs">
+          <div
+            class="card starter"
+            *ngFor="let pack of packsBooth"
+            [ngClass]="getPackStyle(pack.typePack)"
+          >
+            <div class="head">
+              {{ pack.typePack }}
+              <br /><span
+                class="badge"
+                [ngClass]="pack.reserved ? 'bg-success' : 'bg-danger'"
+              >
+                {{ pack.reserved ? "Reserved" : "Not Reserved" }}
+              </span>
+            </div>
+            <div class="ticket">{{ pack.price }} DT</div>
+            <div class="body">
+              <p>
+                {{ pack.description }}
+              </p>
+              <button
+                [routerLink]="['detail', pack.idPack]"
+                type="button"
+                class="btn btn-danger"
+              >
+                View Details
+              </button>
+              <br />
+              <hr />
+              <a
+                ><span
+                  class="badge"
+                  (click)="deletePack(pack.idPack)"
+                  [ngClass]="'bg-danger'"
+                >
+                  remove
+                </span></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

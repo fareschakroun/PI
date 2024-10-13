@@ -1,0 +1,305 @@
+
+
+  <!-- light-dark mode button -->
+  <body data-bs-spy="scroll" data-bs-target="#navbar-navlist" data-bs-offset="71" >
+  <a href="javascript: void(0);" id="mode" class="mode-btn text-white rounded-end">
+
+  </a>
+
+<router-outlet></router-outlet>
+
+
+<section class="footer">
+  <div class="container">
+      <div class="top-footer">
+          <div class="row">
+              <div class="col-lg-4">
+                  <div class="footer-info mt-4">
+                      <!-- <img src="images/inner-image/logo-dark.png" alt="" height="22"> -->
+                      <a class="logo f-30 text-dark fw-bold" href="index.html">
+                          <img src="images/logo-dark.png" class="logo-dark" alt="" height="40">
+                          <img src="images/logo-light.png" class="logo-light" alt="" height="40">
+                      </a>
+                      <p class="f-18 mt-2 text-muted">
+                          Business opportunities Are Like <br>
+                          Buses, There's Always Another <br>
+                          One Coming...
+                      </p>
+                  </div>
+              </div>
+
+              <div class="col-lg-5">
+                  <div class="row">
+
+                      <div class="col-lg-6">
+                          <div class="mt-4">
+                              <h5 class="f-18 fw-bold">Policies</h5>
+                              <ul class="list-unstyled footer-link mt-3">
+                                  <li><a href="#">Security & Provciy</a></li>
+                                  <li><a href="#">Marketplace</a></li>
+                                  <li><a href="#">Term & Condition</a></li>
+                                  <li><a href="#">Collection</a></li>
+                              </ul>
+                          </div>
+                      </div>
+
+                      <div class="col-lg-6">
+                          <div class="mt-4">
+                              <h5 class="f-18 fw-bold">Company</h5>
+                              <ul class="list-unstyled footer-link mt-3">
+                                  <li><a href="index.html">Home</a></li>
+                                  <li><a href="activity.html">Pages</a></li>
+                                  <li><a href="blog.html">Blog</a></li>
+                                  <li><a href="contact.html">Contact</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-lg-3">
+                  <div class="mt-4 0 lg-4">
+                      <h5 class="f-18 fw-bold">Follow Us</h5>
+                      <ul class="list-inline social-icons-list pt-3">
+                          <li class="list-inline-item">
+                              <a href="#"><i class="mdi mdi-facebook"></i></a>
+                          </li>
+                          <li class="list-inline-item">
+                              <a href="#"><i class="mdi mdi-twitter"></i></a>
+                          </li>
+                          <li class="list-inline-item">
+                              <a href="#"><i class="mdi mdi-linkedin"></i></a>
+                          </li>
+                          <li class="list-inline-item">
+                              <a href="#"><i class="mdi mdi-google-plus"></i></a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+      <hr>
+
+     
+  </div>
+</section>
+</body>
+    <a href="javascript: void(0);" id="mode" class="mode-btn text-white rounded-end">
+        <i class="uil uil-brightness mode-dark mx-auto" (click)="dark()"></i>
+        <i class="uil uil-moon bx-spin mode-light" (click)="light()"></i>
+    </a>
+<div *ngIf="token">
+   <nav class="navbar navbar-expand-lg fixed-top sticky" id="navbar">
+    <div class="container-fluid custom-container">
+        <a class="navbar-brand logo f-30 text-dark fw-bold" href="index.html">
+
+          <img src="../assets/images/logoEsprit.png" class="logo-dark" alt="" height="80">
+
+        </a>
+        <div>
+            <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-label="Toggle navigation">
+                <i class="mdi mdi-menu"></i>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mx-auto navbar-center">
+                <li class="nav-item dropdown dropdown-hover">
+                    <a class="nav-link dropdown-toggle" href="index.html" id="homedrop" role="button"
+                        data-bs-toggle="dropdown">
+                        Event
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-center" aria-labelledby="homedrop">
+                        <li><a class="dropdown-item" routerLink="/list"><i
+                                    class="mdi mdi-home-outline f-20 me-2 align-middle"></i>Event</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="http://localhost:4201/myRooms/17/1" class="nav-link">My Room</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/exhibitor/front" class="nav-link">Exhibitor Reservation</a>
+                </li>
+                <li class="nav-item">
+                    <a href="http://localhost:4201/supplierBooth/front" class="nav-link">Check Your Supply Booths</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/supplier/front" class="nav-link">Supplier Requests</a>
+
+                <li class="nav-item dropdown dropdown-hover">
+                    <a class="nav-link dropdown-toggle" href="index.html" id="homedrop" role="button" data-bs-toggle="dropdown">
+                        Booth managment 
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-center" aria-labelledby="homedrop">
+                        <li *ngIf="user.role=='supplier'"><a class="dropdown-item" routerLink="/supplier/front"><i
+                                    class="mdi mdi-account-box-outline f-20 me-2 align-middle"></i>Supplier Requests</a></li>
+                        <li *ngIf="user.role=='exhibitor'"><a class="dropdown-item" routerLink="/exhibitor/front"><i
+                                    class="mdi mdi-account-edit f-20 me-2 align-middle"></i>Exhibitor Reservation</a></li>
+                        <li *ngIf="user.role=='supplier'"><a class="dropdown-item" routerLink="/chat"><i
+                                    class="mdi mdi-account-box-outline f-20 me-2 align-middle"></i>Chat with Admin</a></li>
+                                    <li class="nav-item">
+                        </ul>
+                        <li *ngIf="user.role=='supplier'"><a class="dropdown-item" routerLink="/supplierBooth/front"><i
+                                    class="mdi mdi-account-box-outline f-20 me-2 align-middle"></i>Check affected Booth</a></li>
+                        <li class="nav-item">
+                </li>
+
+
+                <li class="nav-item dropdown dropdown-hover" *ngIf="currentUser.role=='exhibitor'">
+                    <a class="nav-link dropdown-toggle"  id="homedrop" role="button" data-bs-toggle="dropdown">
+                        Pricing
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-center" aria-labelledby="homedrop">
+                        <li ><a class="dropdown-item" routerLink="/ListPacks"><i
+                                    class="mdi mdi-account-box-outline f-20 me-2 align-middle"></i>Available packs</a></li>
+                        <li><a class="dropdown-item"  [routerLink]="['myRooms', currentUser.roomid,currentUser.id]" ><i
+                                    class="mdi mdi-account-edit f-20 me-2 align-middle"></i>My Room</a></li>
+                    </ul>
+                </li>
+
+
+                <!--end dropdown-->
+  
+                <li class="nav-item dropdown dropdown-hover">
+                    <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="pagedropdown" role="button"
+                        data-bs-toggle="dropdown">
+                        Forum
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-center" aria-labelledby="homedrop">
+                        <li><a class="dropdown-item" routerLink="/post-list"><i
+                                    class="mdi mdi-account-box-outline f-20 me-2 align-middle"></i>Posts</a></li>
+                        <li><a class="dropdown-item" routerLink="/claim-form"><i
+                                    class="mdi mdi-account-edit f-20 me-2 align-middle"></i>Claim</a></li>
+                    </ul>
+  
+                </li>
+                <!--end dropdown-->
+  
+  
+                <li class="nav-item dropdown dropdown-hover">
+                    <a class="nav-link dropdown-toggle" href="index.html" id="homedrop" role="button"
+                        data-bs-toggle="dropdown">
+                       Time and Interview management
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-center" aria-labelledby="homedrop">
+                        <li><a class="dropdown-item" routerLink="/calender"><i
+                                    class="mdi mdi-account-box-outline f-20 me-2 align-middle"></i>Calendrier</a></li>
+                        <li *ngIf="user.role=='exhibitor'"><a class="dropdown-item" [routerLink]="['quizgeneral', user.id]"><i
+                                    class="mdi mdi-account-edit f-20 me-2 align-middle"></i>All quiz</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown dropdown-hover">
+                    <a class="nav-link dropdown-toggle" routerLink="/offers" id="homedrop" role="button" data-bs-toggle="dropdown">
+                        Offers
+                    </a>
+                </li>
+
+                <!--end dropdown-->
+
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+                <!--end dropdown-->
+            </ul>
+            <!--end navbar-nav-->
+            <div *ngIf="token">
+                <li class="nav-item dropdown dropdown-hover">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                        {{user.firstname}} {{user.lastname}}
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-center" aria-labelledby="homedrop">
+                        <div *ngIf="user.role == 'student' || user.role == 'alumni'" >
+                            <li><a class="dropdown-item" routerLink="/myapplications"><i
+                                    class="mdi mdi-account-box-outline f-20 me-2 align-middle"></i>My applications</a></li>
+                        </div>
+                            <li><a class="dropdown-item" href="http://localhost:4201/auth" (click)="disconnect()"><i
+                                    class="mdi mdi-account-edit f-20 me-2 align-middle"></i>Disconnect</a></li>
+                    </ul>
+                </li>
+            </div>
+        </div>
+    </div>
+    <!--end container-->
+  </nav>
+  
+  <section class="footer">
+    <div class="container">
+        <div class="top-footer">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-info mt-4">
+                        <!-- <img src="images/inner-image/logo-dark.png" alt="" height="22"> -->
+
+                        <a class="logo f-30 text-dark fw-bold" href="index.html">
+
+                            <img src="images/logo-dark.png" class="logo-dark" alt="" height="40">
+                            <img src="images/logo-light.png" class="logo-light" alt="" height="40">
+                        </a>
+                        <p class="f-18 mt-2 text-muted">
+                            Business opportunities Are Like <br>
+                            Buses, There's Always Another <br>
+                            One Coming...
+                        </p>
+                    </div>
+                </div>
+  
+                <div class="col-lg-5">
+                    <div class="row">
+  
+                        <div class="col-lg-6">
+                            <div class="mt-4">
+                                <h5 class="f-18 fw-bold">Policies</h5>
+                                <ul class="list-unstyled footer-link mt-3">
+                                    <li><a href="#">Security & Provciy</a></li>
+                                    <li><a href="#">Marketplace</a></li>
+                                    <li><a href="#">Term & Condition</a></li>
+                                    <li><a href="#">Collection</a></li>
+                                </ul>
+                            </div>
+                        </div>
+  
+                        <div class="col-lg-6">
+                            <div class="mt-4">
+                                <h5 class="f-18 fw-bold">Company</h5>
+                                <ul class="list-unstyled footer-link mt-3">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="activity.html">Pages</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+  
+                <div class="col-lg-3">
+                    <div class="mt-4 0 lg-4">
+                        <h5 class="f-18 fw-bold">Follow Us</h5>
+                        <ul class="list-inline social-icons-list pt-3">
+                            <li class="list-inline-item">
+                                <a href="#"><i class="mdi mdi-facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#"><i class="mdi mdi-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#"><i class="mdi mdi-linkedin"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#"><i class="mdi mdi-google-plus"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+  
+        <hr>
+  
+       
+    </div>
+  </section>

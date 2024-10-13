@@ -1,0 +1,20 @@
+
+    <div class="quiz-container">
+      <h1>Fun Quiz App</h1>
+      <h4> <span id="score"> {{formatTime(timeElapsed)}} </span></h4>
+      <h4 > {{currentQuestion.question}} </h4>
+      <div class="question-container" >
+        
+        <div class="options-container">
+          <button class="option" [class.selected]="insideSelected(option)"  *ngFor="let option of currentQuestion.options" (click)="MyAnswer(questionTracker,option)"> {{option}} </button>
+        </div>
+      </div>
+      <!-- <div class="score-container">
+        <h3>Your Score: <span id="score">0</span></h3>
+      </div> -->
+      <button id="previous-button" (click)="PreviousQuestion()">Previous Question</button>
+      <button id="next-button" (click)="NextQuestion()">Next Question</button>
+      <button id="restart-button"  (click)="ViewQuiz()" *ngIf="currentAnswer.length==questionList.length">Finish Quiz</button>
+
+    </div>
+   

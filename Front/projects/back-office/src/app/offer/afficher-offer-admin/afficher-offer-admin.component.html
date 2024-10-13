@@ -1,0 +1,74 @@
+<div >
+
+
+
+        <div class="content-body">
+            <div class="container-fluid">
+                <!-- row -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-xxl-12 col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">All Offers</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive recentOrderTable">
+                                    <table class="table verticle-middle table-responsive-md">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Ward No.</th>
+                                                <th scope="col">Title</th>
+                                                <th scope="col">Exhibitor</th>
+                                                <th scope="col">Date</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col">Nbr</th>
+                                                <th scope="col"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let o of newListOffers ;let i=index" [routerLink]="['/admin/offer/candidatures/', o[0].id]">
+                                                <td>{{o[0].id}}</td>
+                                                <td>{{o[0].titre}}</td>
+                                                <td>{{listUsers[i]["name"]}}</td>
+                                                <td>{{o[0].lastDateApplication | date:'dd MMMM yyyy'}}</td>
+                                                <div *ngIf="o[0].lastDateApplication >currentDate.toISOString() == true">
+                                                    <td><span class="badge badge-rounded badge-success">Open</span></td>
+                                                </div>
+                                                <div *ngIf="o[0].lastDateApplication>currentDate.toISOString() == false">
+                                                    <td><span class="badge badge-rounded badge-primary">Close</span></td>
+                                                </div>
+                                                <td>{{o[1]}}</td>
+                                                <td>
+                                                    <div class="dropdown custom-dropdown mb-0">
+                                                        <div class="btn sharp btn-primary tp-btn" data-bs-toggle="dropdown">
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px"
+                                                                viewBox="0 0 24 24" version="1.1">
+                                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                    <rect x="0" y="0" width="24" height="24" />
+                                                                    <circle fill="#000000" cx="12" cy="5" r="2" />
+                                                                    <circle fill="#000000" cx="12" cy="12" r="2" />
+                                                                    <circle fill="#000000" cx="12" cy="19" r="2" />
+                                                                </g>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="dropdown-menu dropdown-menu-end">
+                                                            <a class="dropdown-item" href="javascript:void();;">Details</a>
+                                                            <a class="dropdown-item text-danger" href="javascript:void();;">Cancel</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    

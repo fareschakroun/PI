@@ -1,0 +1,538 @@
+
+    <!-- row -->
+    <div class="container-fluid">
+        <div class="mb-sm-4 d-flex flex-wrap align-items-center text-head">
+            <h2 class="mb-3 me-auto"> Packs Analytics</h2>
+        </div>	
+        <div class="row">
+            <div class="col-xl-3 col-xxl-6 col-sm-6">
+                <div class="card">
+                    <div class="card-body d-flex align-items-center justify-content-between">
+                        <div class="menu">
+                            <span class="font-w500 fs-16 mb-2 d-block">Diamond Packs</span>
+                            <h2>{{QuantiteDiamond}}</h2>
+                        </div>	
+                        <div class="d-inline-block position-relative donut-chart-sale">
+                            <span class="donut1" data-peity='{ "fill": ["var(--primary)", "rgba(255, 243, 240)"],   "innerRadius": 35, "radius": 10}'>5/8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-xxl-6 col-sm-6">
+                <div class="card">
+                    <div class="card-body d-flex align-items-center justify-content-between">
+                        <div class="menu">
+                            <span class="font-w500 fs-16 mb-2 d-block">Silver Packs</span>
+                            <h2>{{Quantitesilver}}</h2>
+                        </div>	
+                        <div class="d-inline-block position-relative donut-chart-sale">
+                            <span class="donut1" data-peity='{ "fill": ["var(--primary)", "rgba(255, 243, 240)"],   "innerRadius": 35, "radius": 10}'>5/6</span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-xxl-6 col-sm-6">
+                <div class="card">
+                    <div class="card-body d-flex align-items-center justify-content-between">
+                        <div class="menu">
+                            <span class="font-w500 fs-16 mb-2 d-block">Total Revenue</span>
+                            <h2>DT{{RevenuTotal}}</h2>
+                        </div>	
+                        <div class="d-inline-block position-relative donut-chart-sale">
+                            <span class="donut1" data-peity='{ "fill": ["var(--primary)", "rgba(255, 243, 240)"],   "innerRadius": 35, "radius": 10}'>5/8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>	
+            <div class="col-xl-3 col-xxl-6 col-sm-6">
+                <div class="card">
+                    <div class="card-body d-flex align-items-center justify-content-between">
+                        <div class="menu">
+                            <span class="font-w500 fs-16 mb-2 d-block">Standard packs</span>
+                            <h2>{{Quantitestandard}}</h2>
+                        </div>	
+                        <div class="d-inline-block position-relative donut-chart-sale">
+                            <span class="donut1" data-peity='{ "fill": ["var(--primary)", "rgba(255, 243, 240)"],   "innerRadius": 35, "radius": 10}'>5/7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>	
+
+             <!-- row -->
+            <div class="col-xl-9 col-xxl-12">
+                <div class="row">
+                    <div class="col-xl-8 col-xxl-12">
+                        <div class="row">
+                            <div class="col-xl-12 col-xxl-6">
+                                <div class="card">
+                                    <div class="card-header pb-0 border-0 mb-3 flex-wrap">
+                                        <div class="mb-2">
+                                            <h4 class="fs-20 mb-0">Packs Statistic</h4>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="card-body py-0">
+                                        
+                                        
+                                        <div id="BarChartss" class="bar-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-xxl-6">
+                                <div class="card">
+                                    <div class="card-header border-0 flex-wrap">
+                                        <div>
+                                            <h4 class="fs-20">Revenue per pack</h4>
+                                            <span>Revenue per each pack type for this current year</span>
+                                        </div>	
+                                       =
+                                    </div>
+                                    <div class="card-body pt-0">
+                                        <div class="row align-items-center">
+                                            <div class="col-sm-6">
+                                                <div id="currentChart11"></div>
+                                            </div>
+                                            <div class="col-sm-6">	
+                                                <div class="row align-items-center">
+                                                    <div class="col-6 d-flex mb-5">
+                                                        <svg class="me-2 mt-1" width="10" height="32" viewBox="0 0 10 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect y="0.505615" width="10" height="31" rx="5" fill="#216FED"/>
+                                                        </svg>
+                                                        <div>	
+                                                            <h4 class="mb-0 fs-24 font-w600" >63,876</h4>
+                                                            <span>Property Sold</span>
+                                                        </div>	
+                                                    </div>	
+                                                    <div class="col-6 d-flex mb-5">
+                                                        <svg class="me-2 mt-1" width="10" height="31" viewBox="0 0 10 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect y="0.00109863" width="10" height="31" rx="5" fill="#FF8723"/>
+                                                        </svg>
+                                                        <div>	
+                                                            <h4 class="mb-0 fs-24 font-w600" >DT{{revenusilver }}</h4>
+                                                            <span>silver income</span>
+                                                        </div>	
+                                                    </div>
+                                                    <div class="col-6 d-flex">
+                                                        <svg class="me-2 mt-1" width="10" height="31" viewBox="0 0 10 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect y="0.000976562" width="10" height="31" rx="5" fill="#F43D3D"/>
+                                                        </svg>
+                                                        <div>	
+                                                            <h4 class="mb-0 fs-24 font-w600" >DT{{revenuDiamond}}</h4>
+                                                            <span>Diamond income</span>
+                                                        </div>	
+                                                    </div>	
+                                                    <div class="col-6 d-flex">
+                                                        <svg class="me-2 mt-1" width="10" height="31" viewBox="0 0 10 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <rect y="0.000976562" width="10" height="31" rx="5" fill="#F43D3D"/>
+                                                        </svg>
+                                                        <div>	
+                                                            <h4 class="mb-0 fs-24 font-w600" >DT{{revenuStandard}}</h4>
+                                                            <span >Standard income</span>
+                                                        </div>	
+                                                    </div>
+                                                </div>
+                                            </div>	
+                                        </div>	
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-xxl-12">
+                        <div class="row">
+                         
+                            <div>
+                                <div class="card customer-wrapper h-100">
+                                    <div class="card-header border-0 pb-0">
+                                        <div>	
+                                            <h4 class="fs-20 mb-0">Loyal Customers</h4>
+                                            <span>Most loyal companies</span>
+                                        </div>	
+                                    </div>
+                                    <div class="card-body pb-0">
+                                        <div class="d-flex align-items-center mb-4" *ngFor="let a of toployalcustomers">
+                                            <div class="recent-customer me-3">
+                                                <img src="../../../assets/images/contacts/c1.jpg" width="50" alt="">
+                                            </div>
+                                            <div>
+                                                <span class="c-name">talan</span>
+                                                <p class="font-w600 mb-0 text-primary">1500 points</p>
+                                            </div>
+                                        </div>	
+                                      
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-header border-0 flex-wrap pb-2">
+                                <div class="mb-sm-3">	
+                                    <h4>Most Favorites Items</h4>
+                                    <span>Lorem ipsum dolor sit amet, consectetur</span>
+                                </div>	
+                                <div class="card-action coin-tabs mt-3 mt-sm-0">
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-bs-toggle="tab" href="#AllCategories" role="tab">All Categories</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link " data-bs-toggle="tab" href="#MainCourse" role="tab" >Main Course</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#Pizza" role="tab" >Pizza</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#Drink" role="tab" >Drink</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#Dessert" role="tab" >Dessert</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body py-0">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade active show" id="AllCategories">
+                                        <div class="row align-items-center border-bottom">
+                                            <div class="col-xl-5 col-lg-5">
+                                                <div class="d-flex align-items-center my-4">
+                                                    <div class="favt-item me-3">
+                                                        <img src="images/menu/fav2.jpg" alt="">
+                                                    </div>
+                                                    <div>
+                                                        <h5><a href="ecom-product-grid.html" class="text-black">Creamy Parmesan Cheese with Chicken Teriyaki Egg</a></h5>
+                                                        <div class="star-review d-flex align-items-center fs-14 mb-3">
+                                                            <i class="fa fa-star text-orange"></i>
+                                                            <i class="fa fa-star text-orange"></i>
+                                                            <i class="fa fa-star text-orange"></i>
+                                                            <i class="fa fa-star text-gray"></i>
+                                                            <i class="fa fa-star text-gray"></i>
+                                                            <span class="ms-3 text-dark">(454 revies)</span>
+                                                        </div>
+                                                        <span>
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M20.8406 4.60999C20.3299 4.099 19.7234 3.69364 19.056 3.41708C18.3885 3.14052 17.6731 2.99817 16.9506 2.99817C16.2281 2.99817 15.5127 3.14052 14.8453 3.41708C14.1778 3.69364 13.5714 4.099 13.0606 4.60999L12.0006 5.66999L10.9406 4.60999C9.90891 3.5783 8.50964 2.9987 7.05061 2.9987C5.59157 2.9987 4.1923 3.5783 3.16061 4.60999C2.12892 5.64169 1.54932 7.04096 1.54932 8.49999C1.54932 9.95903 2.12892 11.3583 3.16061 12.39L4.22061 13.45L12.0006 21.23L19.7806 13.45L20.8406 12.39C21.3516 11.8792 21.757 11.2728 22.0335 10.6053C22.3101 9.93789 22.4524 9.22248 22.4524 8.49999C22.4524 7.77751 22.3101 7.0621 22.0335 6.39464C21.757 5.72718 21.3516 5.12075 20.8406 4.60999Z" fill="#B22222"/>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="text-primary">256k Like it</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-lg-3 col-sm-4 col-6">
+                                                <div class="d-flex align-items-center mb-4">
+                                                    <div id="NewCustomers"></div>
+                                                    <div class="ms-2">
+                                                        <h4 class="fs-24 font-w600 mb-0">45%</h4>
+                                                        <span>Interest</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-2 col-lg-2 col-sm-4 mb-4 col-6">
+                                                <div class="d-flex ">
+                                                    <svg class="me-2" width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <rect width="3.54545" height="26" rx="1.77273" fill="#B22222"/>
+                                                        <rect x="7.09082" y="7.09088" width="3.54545" height="18.9091" rx="1.77273" fill="#B22222"/>
+                                                        <rect x="14.1816" y="17.7273" width="3.54545" height="8.27273" rx="1.77273" fill="#B22222"/>
+                                                        <rect x="21.2725" y="3.54547" width="3.54545" height="22.4545" rx="1.77273" fill="#B22222"/>
+                                                    </svg>
+                                                    <h4 class="fs-22 font-w700 mb-0">6,732</h4>
+                                                </div>	
+                                                <span class="font-w600 text-black">Total Sales</span>
+                                            </div>
+                                            <div class="col-xl-2 col-lg-2 col-sm-4 d-sm-block d-none mb-4">
+                                                <div class="d-inline-block position-relative donut-chart-sale mb-4">
+                                                    <span class="donut1" data-peity='{ "fill": ["var(--primary)", "rgba(235, 235, 235)"],   "innerRadius": 35, "radius": 10}'>5/8</span>
+                                                    <small class="text-black">75%</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center border-bottom">
+                                            <div class="col-xl-5 col-lg-5">
+                                                <div class="d-flex align-items-center my-4">
+                                                    <div class="favt-item me-3">
+                                                        <img src="images/menu/fav1.jpg" alt="">
+                                                    </div>
+                                                    <div>
+                                                        <h5><a href="ecom-product-grid.html" class="text-black">Creamy Parmesan Cheese with Chicken Teriyaki Egg</a></h5>
+                                                        <div class="star-review d-flex align-items-center fs-14 mb-3">
+                                                            <i class="fa fa-star text-orange"></i>
+                                                            <i class="fa fa-star text-orange"></i>
+                                                            <i class="fa fa-star text-orange"></i>
+                                                            <i class="fa fa-star text-gray"></i>
+                                                            <i class="fa fa-star text-gray"></i>
+                                                            <span class="ms-3 text-dark">(454 revies)</span>
+                                                        </div>
+                                                        <span>
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M20.8406 4.60999C20.3299 4.099 19.7234 3.69364 19.056 3.41708C18.3885 3.14052 17.6731 2.99817 16.9506 2.99817C16.2281 2.99817 15.5127 3.14052 14.8453 3.41708C14.1778 3.69364 13.5714 4.099 13.0606 4.60999L12.0006 5.66999L10.9406 4.60999C9.90891 3.5783 8.50964 2.9987 7.05061 2.9987C5.59157 2.9987 4.1923 3.5783 3.16061 4.60999C2.12892 5.64169 1.54932 7.04096 1.54932 8.49999C1.54932 9.95903 2.12892 11.3583 3.16061 12.39L4.22061 13.45L12.0006 21.23L19.7806 13.45L20.8406 12.39C21.3516 11.8792 21.757 11.2728 22.0335 10.6053C22.3101 9.93789 22.4524 9.22248 22.4524 8.49999C22.4524 7.77751 22.3101 7.0621 22.0335 6.39464C21.757 5.72718 21.3516 5.12075 20.8406 4.60999Z" fill="#B22222"/>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="text-primary">256k Like it</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-lg-3 col-sm-4 col-6">
+                                                <div class="d-flex align-items-center mb-4">
+                                                    <div id="NewCustomers2"></div>
+                                                    <div class="ms-2">
+                                                        <h4 class="fs-24 font-w600 mb-0">45%</h4>
+                                                        <span>Interest</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-2 col-lg-2 col-sm-4 mb-4 col-6">
+                                                <div class="d-flex">
+                                                    <svg class="me-2" width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <rect width="3.54545" height="26" rx="1.77273" fill="#B22222"/>
+                                                        <rect x="7.09082" y="7.09088" width="3.54545" height="18.9091" rx="1.77273" fill="#B22222"/>
+                                                        <rect x="14.1816" y="17.7273" width="3.54545" height="8.27273" rx="1.77273" fill="#B22222"/>
+                                                        <rect x="21.2725" y="3.54547" width="3.54545" height="22.4545" rx="1.77273" fill="#B22222"/>
+                                                    </svg>
+                                                    <h4 class="fs-22 font-w700 mb-0">6,732</h4>
+                                                </div>	
+                                                <span class="font-w600 text-black">Total Sales</span>
+                                            </div>
+                                            <div class="col-xl-2 col-lg-2 col-sm-4 d-sm-block d-none mb-4">
+                                                <div class="d-inline-block position-relative donut-chart-sale">
+                                                    <span class="donut1" data-peity='{ "fill": ["var(--primary)", "rgba(235, 235, 235)"],   "innerRadius": 35, "radius": 10}'>5/8</span>
+                                                    <small class="text-black">75%</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-xl-5 col-lg-5">
+                                                <div class="d-flex align-items-center my-4">
+                                                    <div class="favt-item me-3">
+                                                        <img src="images/menu/fav2.jpg" alt="">
+                                                    </div>
+                                                    <div>
+                                                        <h5><a href="ecom-product-grid.html" class="text-black">Creamy Parmesan Cheese with Chicken Teriyaki Egg</a></h5>
+                                                        <div class="star-review d-flex align-items-center fs-14 mb-3">
+                                                            <i class="fa fa-star text-orange"></i>
+                                                            <i class="fa fa-star text-orange"></i>
+                                                            <i class="fa fa-star text-orange"></i>
+                                                            <i class="fa fa-star text-gray"></i>
+                                                            <i class="fa fa-star text-gray"></i>
+                                                            <span class="ms-3 text-dark">(454 revies)</span>
+                                                        </div>
+                                                        <span>
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M20.8406 4.60999C20.3299 4.099 19.7234 3.69364 19.056 3.41708C18.3885 3.14052 17.6731 2.99817 16.9506 2.99817C16.2281 2.99817 15.5127 3.14052 14.8453 3.41708C14.1778 3.69364 13.5714 4.099 13.0606 4.60999L12.0006 5.66999L10.9406 4.60999C9.90891 3.5783 8.50964 2.9987 7.05061 2.9987C5.59157 2.9987 4.1923 3.5783 3.16061 4.60999C2.12892 5.64169 1.54932 7.04096 1.54932 8.49999C1.54932 9.95903 2.12892 11.3583 3.16061 12.39L4.22061 13.45L12.0006 21.23L19.7806 13.45L20.8406 12.39C21.3516 11.8792 21.757 11.2728 22.0335 10.6053C22.3101 9.93789 22.4524 9.22248 22.4524 8.49999C22.4524 7.77751 22.3101 7.0621 22.0335 6.39464C21.757 5.72718 21.3516 5.12075 20.8406 4.60999Z" fill="#B22222"/>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="text-primary">256k Like it</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-lg-3 col-sm-4 col-6">
+                                                <div class="d-flex align-items-center mb-4">
+                                                    <div id="NewCustomers1"></div>
+                                                    <div class="ms-2">
+                                                        <h4 class="fs-24 font-w600 mb-0">45%</h4>
+                                                        <span>Interest</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ol-xl-2 col-lg-2 col-sm-4 mb-4 col-6">
+                                                <div class="d-flex">
+                                                    <svg class="me-2" width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <rect width="3.54545" height="26" rx="1.77273" fill="#B22222"/>
+                                                        <rect x="7.09082" y="7.09088" width="3.54545" height="18.9091" rx="1.77273" fill="#B22222"/>
+                                                        <rect x="14.1816" y="17.7273" width="3.54545" height="8.27273" rx="1.77273" fill="#B22222"/>
+                                                        <rect x="21.2725" y="3.54547" width="3.54545" height="22.4545" rx="1.77273" fill="#B22222"/>
+                                                    </svg>
+                                                    <h4 class="fs-22 font-w700 mb-0">6,732</h4>
+                                                </div>	
+                                                <span class="font-w600 text-black">Total Sales</span>
+                                            </div>
+                                            <div class="col-xl-2 col-lg-2 col-sm-4 d-sm-block d-none mb-4">
+                                                <div class="d-inline-block position-relative donut-chart-sale">
+                                                    <span class="donut1" data-peity='{ "fill": ["var(--primary)", "rgba(235, 235, 235)"],   "innerRadius": 35, "radius": 10}'>5/8</span>
+                                                    <small class="text-black">75%</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer border-0 down-arrow p-0">
+                                <a href="javascript:void(0);"><i class="fas fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-xxl-12">
+                <div class="row">
+                    <div class="col-xl-12 col-xxl-6 col-lg-6">
+                        <div class="card">
+                            <div class="card-header border-0">
+                                <div>
+                                    <h4 class="fs-20">Best Seler Menus</h4>
+                                    <span>Lorem ipsum dolor</span>
+                                </div>
+                            </div>
+                            <div class="card-body border-bottom pt-0">
+                                <div class="seler-menus mb-3">
+                                    <img src="images/menu/menu1.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <h5 class="text-black mb-3"><a href="ecom-product-grid.html" class="text-black">Spinach with Roasted Crab</a></h5>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h4 class="font-w600 mb-0 text-black">$6.73</h4>
+                                        <div class="d-flex align-items-center">	
+                                            <svg class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20.8401 4.60896C20.3294 4.09796 19.7229 3.6926 19.0555 3.41604C18.388 3.13948 17.6726 2.99713 16.9501 2.99713C16.2276 2.99713 15.5122 3.13948 14.8448 3.41604C14.1773 3.6926 13.5709 4.09796 13.0601 4.60896L12.0001 5.66896L10.9401 4.60896C9.90843 3.57726 8.50915 2.99767 7.05012 2.99767C5.59109 2.99767 4.19181 3.57726 3.16012 4.60896C2.12843 5.64065 1.54883 7.03992 1.54883 8.49896C1.54883 9.95799 2.12843 11.3573 3.16012 12.389L4.22012 13.449L12.0001 21.229L19.7801 13.449L20.8401 12.389C21.3511 11.8782 21.7565 11.2718 22.033 10.6043C22.3096 9.93685 22.4519 9.22144 22.4519 8.49896C22.4519 7.77647 22.3096 7.06106 22.033 6.3936C21.7565 5.72614 21.3511 5.11971 20.8401 4.60896Z" fill="#B22222"/>
+                                            </svg>
+                                            <span class="text-black mb-0">256k</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">	
+                                            <svg class="me-2" width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect y="-0.000976562" width="2.95455" height="18" rx="1.47727" fill="#B22222"/>
+                                                <rect x="5.90918" y="4.90796" width="2.95455" height="13.0909" rx="1.47727" fill="#B22222"/>
+                                                <rect x="11.8184" y="12.2717" width="2.95455" height="5.72727" rx="1.47727" fill="#B22222"/>
+                                                <rect x="17.7275" y="2.45361" width="2.95455" height="15.5455" rx="1.47727" fill="#B22222"/>
+                                            </svg>
+                                            <span class="text-black mb-0">256k</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body border-bottom">
+                                <div class="seler-menus mb-3">
+                                    <img src="images/menu/menu2.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <h5 class="text-black mb-3"><a href="ecom-product-grid.html" class="text-black">Chicken Teriyaki Khas Haji Muhidin Malang</a></h5>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h4 class="font-w600 mb-0 text-black">$6.73</h4>
+                                        <div class="d-flex align-items-center">	
+                                            <svg class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20.8401 4.60896C20.3294 4.09796 19.7229 3.6926 19.0555 3.41604C18.388 3.13948 17.6726 2.99713 16.9501 2.99713C16.2276 2.99713 15.5122 3.13948 14.8448 3.41604C14.1773 3.6926 13.5709 4.09796 13.0601 4.60896L12.0001 5.66896L10.9401 4.60896C9.90843 3.57726 8.50915 2.99767 7.05012 2.99767C5.59109 2.99767 4.19181 3.57726 3.16012 4.60896C2.12843 5.64065 1.54883 7.03992 1.54883 8.49896C1.54883 9.95799 2.12843 11.3573 3.16012 12.389L4.22012 13.449L12.0001 21.229L19.7801 13.449L20.8401 12.389C21.3511 11.8782 21.7565 11.2718 22.033 10.6043C22.3096 9.93685 22.4519 9.22144 22.4519 8.49896C22.4519 7.77647 22.3096 7.06106 22.033 6.3936C21.7565 5.72614 21.3511 5.11971 20.8401 4.60896Z" fill="#B22222"/>
+                                            </svg>
+                                            <span class="text-black mb-0">256k</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">	
+                                            <svg class="me-2" width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect y="-0.000976562" width="2.95455" height="18" rx="1.47727" fill="#B22222"/>
+                                                <rect x="5.90918" y="4.90796" width="2.95455" height="13.0909" rx="1.47727" fill="#B22222"/>
+                                                <rect x="11.8184" y="12.2717" width="2.95455" height="5.72727" rx="1.47727" fill="#B22222"/>
+                                                <rect x="17.7275" y="2.45361" width="2.95455" height="15.5455" rx="1.47727" fill="#B22222"/>
+                                            </svg>
+                                            <span class="text-black mb-0">256k</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body border-bottom">
+                                <div class="seler-menus mb-3">
+                                    <img src="images/menu/menu3.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <h5 class="text-black mb-3"><a href="ecom-product-grid.html" class="text-black">Fried Chicken Roll Extra Spiciy with Mozarella</a></h5>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h4 class="font-w600 mb-0 text-black">$6.73</h4>
+                                        <div class="d-flex align-items-center">	
+                                            <svg class="me-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M20.8401 4.60896C20.3294 4.09796 19.7229 3.6926 19.0555 3.41604C18.388 3.13948 17.6726 2.99713 16.9501 2.99713C16.2276 2.99713 15.5122 3.13948 14.8448 3.41604C14.1773 3.6926 13.5709 4.09796 13.0601 4.60896L12.0001 5.66896L10.9401 4.60896C9.90843 3.57726 8.50915 2.99767 7.05012 2.99767C5.59109 2.99767 4.19181 3.57726 3.16012 4.60896C2.12843 5.64065 1.54883 7.03992 1.54883 8.49896C1.54883 9.95799 2.12843 11.3573 3.16012 12.389L4.22012 13.449L12.0001 21.229L19.7801 13.449L20.8401 12.389C21.3511 11.8782 21.7565 11.2718 22.033 10.6043C22.3096 9.93685 22.4519 9.22144 22.4519 8.49896C22.4519 7.77647 22.3096 7.06106 22.033 6.3936C21.7565 5.72614 21.3511 5.11971 20.8401 4.60896Z" fill="#B22222"/>
+                                            </svg>
+                                            <span class="text-black mb-0">256k</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">	
+                                            <svg class="me-2" width="21" height="18" viewBox="0 0 21 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect y="-0.000976562" width="2.95455" height="18" rx="1.47727" fill="#B22222"/>
+                                                <rect x="5.90918" y="4.90796" width="2.95455" height="13.0909" rx="1.47727" fill="#B22222"/>
+                                                <rect x="11.8184" y="12.2717" width="2.95455" height="5.72727" rx="1.47727" fill="#B22222"/>
+                                                <rect x="17.7275" y="2.45361" width="2.95455" height="15.5455" rx="1.47727" fill="#B22222"/>
+                                            </svg>
+                                            <span class="text-black mb-0">256k</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer border-0 down-arrow py-1">
+                                <a href="javascript:void(0);"><i class="fas fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-xxl-6 col-lg-6">
+                        <div class="card h-auto">
+                            <div class="card-header border-0">
+                                <div>
+                                    <h4 class="fs-20">Daily Trending Menus</h4>
+                                    <span>Lorem ipsum dolor</span>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex border-bottom py-3">
+                                <div class="trending-menu me-3">
+                                    <img src="images/menu/menu5.jpg" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="mb-3"><a href="ecom-product-grid.html" class="text-black">Watermelon juice with ice</a></h5>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>Order 67x</span>
+                                        <span class="fs-18 font-w600 text-black">$4.8</span>
+                                    </div>
+                                </div>
+                            </div>	
+                            <div class="card-body d-flex border-bottom py-3">
+                                <div class="trending-menu me-3">
+                                    <img src="images/menu/menu6.jpg" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="mb-3"><a href="ecom-product-grid.html" class="text-black">Chicken curry special with cucumber</a></h5>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>Order 67x</span>
+                                        <span class="fs-18 font-w600 text-black">$4.8</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex border-bottom py-3">
+                                <div class="trending-menu me-3">
+                                    <img src="images/menu/menu7.jpg" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="mb-3"><a href="ecom-product-grid.html" class="text-black">Italiano pizza with garlic</a></h5>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>Order 67x</span>
+                                        <span class="fs-18 font-w600 text-black">$4.8</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex border-bottom py-3">
+                                <div class="trending-menu me-3">
+                                    <img src="images/menu/menu8.jpg" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="mb-3"><a href="ecom-product-grid.html" class="text-black">Tuna soup spinach with himalaya salt</a></h5>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>Order 67x</span>
+                                        <span class="fs-18 font-w600 text-black">$4.8</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex py-3">
+                                <div class="trending-menu me-3">
+                                    <img src="images/menu/menu5.jpg" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <h5 class="mb-3"><a href="ecom-product-grid.html" class="text-black">Medium Spicy Spagethi Italiano</a></h5>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>Order 67x</span>
+                                        <span class="fs-18 font-w600 text-black">$4.8</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>

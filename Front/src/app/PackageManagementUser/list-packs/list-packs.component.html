@@ -1,0 +1,118 @@
+<div id="mainCoantiner">
+  <!--dust particel-->
+  <div class="margin-body">
+    <div>
+      <div class="starsec"></div>
+      <div class="starthird"></div>
+      <div class="starfourth"></div>
+      <div class="starfifth"></div>
+    </div>
+    <!--Dust particle end--->
+    
+    <div class="row">
+     
+      <div class="col-sm-12 col-md-12">
+        <div class="wpb_text_column wpb_content_element">
+          <div class="wpb_wrapper">
+            <div class="title-h1 text-center">
+              <br>
+              <a class="gem-button gem-yellow" [routerLink]="['ListRooms']">Participate to room </a>
+              <span><span class="light">pricing </span> table</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div
+        class="col-sm-3 col-md-3 pricing-column-wrapper"
+        style="margin-left: 13%"
+      >
+        <div class="pricing-column" style="width: 90%">
+          <div class="pricing-price-row">
+            <div class="pricing-price-wrapper">
+              <div class="pricing-price">
+                <div class="time">Start from</div>
+                <div class="pricing-cost">Dt {{minStandardPrice}}</div>
+                
+              </div>
+            </div>
+          </div>
+          <div class="pricing-row-title">
+            <div class="pricing_row_title">Standard</div>
+          </div>
+
+          <figure
+            *ngFor="let p of packsStandard.slice(0, 2); let i = index"
+            class="pricing-row"
+          >
+            Pack {{ i + 1 }}
+          </figure>
+          <figure class="pricing-row">...</figure>
+          <div class="pricing-footer">
+            <div class="gem-button-container gem-button-position-center">
+              <a class="gem-button gem-purpel" [routerLink]="['DetailPack',2]">view others</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 col-md-3 pricing-column-wrapper">
+        <div class="pricing-column" style="width: 90%">
+          <div class="pricing-price-row">
+            <div class="pricing-price-wrapper">
+              <div class="pricing-price">
+                <div class="time">Start from</div>
+                <div class="pricing-cost">Dt {{minDiamondPrice}}</div>
+                
+              </div>
+            </div>
+          </div>
+          <div class="pricing-row-title">
+            <div class="pricing_row_title">Diamond</div>
+          </div>
+          <figure
+            *ngFor="let p of packsDiamond.slice(0, 2); let i = index"
+            class="pricing-row"
+          >
+            Pack {{ i + 1 }}
+          </figure>
+          <figure class="pricing-row">...</figure>
+          <div class="pricing-footer">
+            <div class="gem-button-container gem-button-position-center">
+              <a class="gem-button gem-orange" [routerLink]="['DetailPack',0]">view others</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 col-md-3 pricing-column-wrapper">
+        <div class="pricing-column" style="width: 90%">
+          <div class="pricing-price-row">
+            <div class="pricing-price-wrapper">
+              <div class="pricing-price">
+                <div class="time" style="display: inline-block">Start from</div>
+                <div class="pricing-cost">Dt {{minSilverPrice}}</div>
+                
+              </div>
+            </div>
+          </div>
+          <div class="pricing-row-title">
+            <div class="pricing_row_title">Silver</div>
+          </div>
+          <figure
+            *ngFor="let p of packsSilver.slice(0, 2); let i = index"
+            class="pricing-row"
+          >
+            Pack {{ i + 1 }}
+          </figure>
+          <figure class="pricing-row">...</figure>
+          <div class="pricing-footer">
+            <div class="gem-button-container gem-button-position-center">
+              <a class="gem-button gem-yellow" [routerLink]="['DetailPack',1]">view others</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

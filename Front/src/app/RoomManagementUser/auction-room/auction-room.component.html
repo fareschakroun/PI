@@ -1,0 +1,255 @@
+<section class="home-4 section overflow-hidden" id="explore">
+  <!-- start container -->
+  <div class="container" [ngClass]="{ 'disabled-section': isAuctionEnded }">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="text-center pb-5 home-heading">
+          <h6 class="fw-semibold text-muted">
+            Welcome to auction for {{ room.typePack }} packs
+          </h6>
+          <h2 class="fw-bold">The auction will start in a few seconds</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="row align-items-center">
+      <div class="col-lg-3">
+        <div
+          class="seller-box"
+          *ngFor="let user of usersInRoom; let i = index"
+          [ngClass]="{ 'highest-price': user === highestPricingUser }"
+        >
+          <div class="badge">
+            <span class="badge-text">Top 1 </span>
+          </div>
+          <div class="row">
+            <div class="number text-center rounded-circle">
+              <h6 class="text-white f-12">01</h6>
+            </div>
+            <div class="d-flex align-items-center">
+              <div class="flex-shrink-0 ms-3">
+                <div class="avatar-md rounded-circle">
+                  <img
+                    src="../assets/images/slider/user/img-4.jpg"
+                    alt="..."
+                    class="img-fluid rounded-circle box-shadow-lg"
+                  />
+                </div>
+              </div>
+              <div class="flex-grow-1 ms-2">
+                <h5 class="mb-0 f-15">{{ user.name }}</h5>
+                <p class="mb-0 f-14 fw-semibold text-muted">
+                  {{ user.pricing }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div class="row align-items-center">
+          <div class="col-lg-5 col-md-6 my-4 my-lg-0">
+            <div class="art-image p-lg-6">
+              <div class="details-box" style="width: 550%">
+                <p class="text-muted f-16">Highest price</p>
+                <div class="row d-flex mt-4">
+                  <div class="col-lg-6">
+                    <p class="fw-semibold f-16 mb-0 text-muted">Time left</p>
+                    <p class="fw-semibold f-18">{{ timeLeft }}</p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p class="fw-semibold f-16 mb-0 text-muted">Price</p>
+                    <p class="fw-semibold f-18">{{ room.priceAuction }}</p>
+                  </div>
+                </div>
+              </div>
+              <img
+                src="../../../assets/images/img1.jpg"
+                alt=""
+                class="img-fluid"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="body-content">
+              <div class="d-flex">
+                <div class="title">
+                  <h4 class="fw-bold text-uppercase">
+                    Auction will start from
+                  </h4>
+                </div>
+                <div class="icon d-flex ms-auto">
+                  <div class="like">
+                    <a href="#"><i class="mdi mdi-heart"></i></a>
+                  </div>
+                  <div class="menu ms-3">
+                    <div class="dropdown">
+                      <a
+                        href="#"
+                        id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        ><i class="mdi mdi-dots-vertical"> </i
+                      ></a>
+                      <ul
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton1"
+                      >
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">Another action</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="#"
+                            >Something else here</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-content">
+                <div class="small-title mb-3">
+                  <p class="f-14 fw-semibold">
+                    <span class="text-muted ms-2">DT{{ room.price }}</span>
+                  </p>
+                </div>
+                <div class="info-list">
+                  <p class="f-14 text-muted fw-semibold mb-0">
+                    StartDate : <span>{{ room.dateDebut }}</span>
+                  </p>
+                  <p class="f-14 text-muted fw-semibold mb-0">
+                    Duration : <span>{{ room.duration }} minute</span>
+                  </p>
+                </div>
+                <div class="profile mt-4">
+                  <div class="d-flex align-items-center">
+                    <div class="flex-shrink-0">
+                      <div class="avatar-md">
+                        <img
+                          src="../../../assets/images/slider/user/img-1.jpg"
+                          alt=""
+                          class="img-fluid rounded-circle"
+                        />
+                      </div>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                      <h6 class="f-14 text-muted mb-0">Name of campany</h6>
+                      <p class="f-14 mb-0 fw-semibold">jimmy_dom</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="high-bid p-4 mt-4">
+                  <h6>Highest Bid:</h6>
+                  <div class="d-flex">
+                    <div
+                      type="button"
+                      (click)="updatePrice(50)"
+                      style="margin-right: 5%; width: 10%"
+                      class="avatar-xs bg-primary rounded-circle text-center text-white"
+                    >
+                      50p
+                    </div>
+                    <div
+                      type="button"
+                      (click)="updatePrice(100)"
+                      style="margin-right: 5%; width: 10%"
+                      class="avatar-xs bg-primary rounded-circle text-center text-white"
+                    >
+                      100p
+                    </div>
+                    <div
+                      type="button"
+                      (click)="updatePrice(150)"
+                      style="margin-right: 5%; width: 10%"
+                      class="avatar-xs bg-primary rounded-circle text-center text-white"
+                    >
+                      150p
+                    </div>
+                    <div class="text ms-auto">
+                      <p class="mb-0 f-14 fw-semibold">
+                        you still have {{ CurentUser.points  }}
+                      </p>
+                      <p class="mb-0 f-14 fw-semibold">
+                        your biding is {{ currentEnchere.pricing }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div
+  *ngIf="isAuctionEndedLosers"
+  id="exampleModalCenterr"
+  class="modal fade"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Auction ended</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>TIME IS OUT !</p>
+        <p> we have refunded your points
+          Other chance ! </p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-primary"
+         
+          (click)="navigateToListeRooms()"
+        >
+       participate to onother room 
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  *ngIf="isAuctionEndedWinners"
+  id="exampleModalCenterr"
+  class="modal fade"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Auction ended</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>TIME IS OUT !</p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="navigateToRoolette()"
+        >
+          Get your pack
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

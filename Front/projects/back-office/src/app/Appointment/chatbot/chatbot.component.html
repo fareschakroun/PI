@@ -1,0 +1,34 @@
+
+
+
+
+
+  <h1 class="text-center">Welcome to our New chatbot</h1>
+ 
+
+
+
+
+<p></p>
+<p></p>
+  <form [formGroup]="chatForm" (ngSubmit)="add()">
+    <input type="text" class="form-control" formControlName="message" id="message" style="marker-mid: 100px;" >
+  
+    <button type="submit" aria-label="add" class="btn btn-primary" >Get Chatbot Response</button>
+  <!-- //Start Listening -->
+  <button id="start-btn"  (click)="startListening()">startListening
+    
+
+  </button>
+  <!-- Stop Listening -->
+<button id="stop-btn" (click)="stopListening()" style="display:none" > stop Listening </button>
+</form>
+
+<div *ngIf="chatbotResponse">
+  <div>{{ chatbotResponse }}</div>
+</div>
+
+
+<!-- //------------------------------------------ -->
+
+

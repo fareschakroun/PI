@@ -1,0 +1,6 @@
+/* notification.component.css */
+.notifications {
+    max-height: 300px; /* Set the maximum height for the dropdown */
+    overflow-y: auto; /* Enable vertical scrollbar when content exceeds the height */
+  }
+  
